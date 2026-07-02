@@ -490,70 +490,31 @@
     .about-point b{ display:block; font-size:15.5px; margin-bottom:2px; }
     .about-point span{ font-size:14px; color:var(--charcoal-70); }
 
-    /* --- SOSIAL MEDIA LINK BARU DI TENTANG KAMI --- */
-    .social-media-about {
-      margin-top: 36px;
-      padding: 24px 26px;
-      background: rgba(231, 163, 53, 0.08);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(231, 163, 53, 0.25);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      backdrop-filter: blur(4px);
-      transition: border-color 0.2s ease;
-    }
-    .social-media-about:hover {
-      border-color: var(--mustard);
-    }
-    .social-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--charcoal);
-      font-family: var(--font-display);
-    }
-    .social-label i {
-      color: var(--clove);
-    }
-    .social-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .social-link-about {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--cream);
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--charcoal);
-      border: 1.5px solid var(--cream-line);
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    }
-    .social-link-about i {
-      transition: transform 0.2s ease;
-    }
-    .social-link-about:hover {
-      background: var(--charcoal);
-      color: var(--cream);
-      border-color: var(--charcoal);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 22px -12px rgba(42,33,26,.5);
-    }
-    .social-link-about:hover i {
-      transform: scale(1.1);
-      color: var(--mustard);
-    }
-    /* Akhir sosial media tentang kami */
+   <!-- ===== SOSIAL MEDIA LINK BARU DI TENTANG KAMI ===== -->
+<div class="social-media-about reveal">
+  <div class="social-label">
+    <i data-lucide="heart" style="width:20px;height:20px;"></i> Ikuti Keseruan Kami
+  </div>
+  <div class="social-buttons">
+    <a href="https://www.instagram.com/warkop_pancongceriaa/" target="_blank" rel="noopener" class="social-link-about">
+      <!-- Logo Instagram SVG -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+        <circle cx="18" cy="6" r="1" fill="currentColor"/>
+      </svg>
+      Instagram
+    </a>
+    <a href="https://www.tiktok.com/@warkoppancongceria" target="_blank" rel="noopener" class="social-link-about">
+      <!-- Logo TikTok SVG -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.5 6.5C15.5 6.5 14 5 14 3h-3v12.5c0 1.5-1.5 3-3 2.5S5.5 15.5 5.5 14s1-3 2.5-3v-3c-3 0-5.5 2.5-5.5 5.5S5 19 8 19s6-2.5 6-7V9c1.5 2 4 3 5 3V6.5c-1 0-1.5 0-1.5 0z" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      TikTok
+    </a>
+  </div>
+</div>
+<!-- ===== AKHIR SOSIAL MEDIA LINK ===== -->
 
     @media (max-width: 900px){
       .about-grid{ grid-template-columns:1fr; }
@@ -794,56 +755,76 @@
       </div>
     </div>
 
-    <!-- ========== MENU LAINNYA (TAMBAHAN BARU) ========== -->
-    <div class="menu-extended reveal">
-      <div class="menu-extended-title">
-        <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
-      </div>
-      <div class="menu-list">
-        <!-- Item 1 -->
+   <!-- ========== MENU LAINNYA (DIPISAH MAKANAN & MINUMAN) ========== -->
+<div class="menu-extended reveal">
+  <div class="menu-extended-title">
+    <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
+  </div>
+  
+  <!-- Grid dua kolom: Kiri Minuman, Kanan Makanan -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+    
+    <!-- Kolom Kiri: MINUMAN -->
+    <div>
+      <h4 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mustard); display: flex; align-items: center; gap: 8px; color: var(--charcoal);">
+        <span style="font-size: 22px;">🥤</span> Minuman
+      </h4>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
         <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Original <span class="menu-item-desc">(Kelapa + Gula Pasir)</span></span>
-          <span class="menu-item-price">Rp 6.000</span>
-        </div>
-        <!-- Item 2 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Double Cokelat <span class="menu-item-desc">(Lumer di luar & dalam)</span></span>
+          <span class="menu-item-name">Kopi Susu Kampung <span class="menu-item-desc">(Robusta + gula aren)</span></span>
           <span class="menu-item-price">Rp 9.000</span>
         </div>
-        <!-- Item 3 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Pancong Mozarella <span class="menu-item-desc">(Keju mozarella stretchy)</span></span>
-          <span class="menu-item-price">Rp 12.000</span>
-        </div>
-        <!-- Item 4 -->
-        <div class="menu-list-item">
-          <span class="menu-item-name">Green Tea Latte <span class="menu-item-desc">(Matcha + susu segar)</span></span>
-          <span class="menu-item-price">Rp 13.000</span>
-        </div>
-        <!-- Item 5 -->
         <div class="menu-list-item">
           <span class="menu-item-name">Kopi Hitam Tradisional <span class="menu-item-desc">(Robusta tubruk kental)</span></span>
           <span class="menu-item-price">Rp 7.000</span>
         </div>
-        <!-- Item 6 -->
+        <div class="menu-list-item">
+          <span class="menu-item-name">Green Tea Latte <span class="menu-item-desc">(Matcha + susu segar)</span></span>
+          <span class="menu-item-price">Rp 13.000</span>
+        </div>
         <div class="menu-list-item">
           <span class="menu-item-name">Es Cokelat Kampung <span class="menu-item-desc">(Cokelat bubuk + susu kental)</span></span>
           <span class="menu-item-price">Rp 10.000</span>
         </div>
-        <!-- Item 7 -->
+        <div class="menu-list-item">
+          <span class="menu-item-name">Es Teh Manis <span class="menu-item-desc">(Teh asli + gula batu)</span></span>
+          <span class="menu-item-price">Rp 5.000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kolom Kanan: MAKANAN -->
+    <div>
+      <h4 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--mustard); display: flex; align-items: center; gap: 8px; color: var(--charcoal);">
+        <span style="font-size: 22px;">🍽️</span> Makanan
+      </h4>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div class="menu-list-item">
+          <span class="menu-item-name">Pancong Original <span class="menu-item-desc">(Kelapa + Gula Pasir)</span></span>
+          <span class="menu-item-price">Rp 6.000</span>
+        </div>
+        <div class="menu-list-item">
+          <span class="menu-item-name">Pancong Double Cokelat <span class="menu-item-desc">(Lumer di luar & dalam)</span></span>
+          <span class="menu-item-price">Rp 9.000</span>
+        </div>
+        <div class="menu-list-item">
+          <span class="menu-item-name">Pancong Mozarella <span class="menu-item-desc">(Keju mozarella stretchy)</span></span>
+          <span class="menu-item-price">Rp 12.000</span>
+        </div>
         <div class="menu-list-item">
           <span class="menu-item-name">Roti Bakar Srikaya <span class="menu-item-desc">(Roti tawar tebal + selai srikaya)</span></span>
           <span class="menu-item-price">Rp 11.000</span>
         </div>
-        <!-- Item 8 -->
         <div class="menu-list-item">
           <span class="menu-item-name">Pisang Goreng Kremes <span class="menu-item-desc">(Pisang kepok + taburan kremes)</span></span>
           <span class="menu-item-price">Rp 8.000</span>
         </div>
       </div>
     </div>
-    <!-- ========== AKHIR MENU LAINNYA ========== -->
 
+  </div>
+</div>
+<!-- ========== AKHIR MENU LAINNYA ========== -->
   </div>
 </section>
 
@@ -962,19 +943,20 @@
   <div class="wrap">
     <div class="footer-top">
       <span class="footer-logo">🥞 Warkop Pancong Ceria</span>
-     <div class="social-links">
+    <div class="social-links">
   <a href="https://www.instagram.com/warkop_pancongceriaa/" target="_blank" rel="noopener" aria-label="Instagram">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+      <circle cx="18" cy="6" r="1" fill="currentColor"/>
     </svg>
   </a>
   <a href="https://www.tiktok.com/@warkoppancongceria" target="_blank" rel="noopener" aria-label="TikTok">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.5 6.5C15.5 6.5 14 5 14 3h-3v12.5c0 1.5-1.5 3-3 2.5S5.5 15.5 5.5 14s1-3 2.5-3v-3c-3 0-5.5 2.5-5.5 5.5S5 19 8 19s6-2.5 6-7V9c1.5 2 4 3 5 3V6.5c-1 0-1.5 0-1.5 0z" stroke="currentColor" stroke-width="2"/>
     </svg>
   </a>
+</div>
 </div>
     <div class="footer-inner">
       <p>&copy; 2026 Warkop Pancong Ceria. Semua hak cipta dilindungi.</p>

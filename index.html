@@ -490,9 +490,78 @@
     .about-point b{ display:block; font-size:15.5px; margin-bottom:2px; }
     .about-point span{ font-size:14px; color:var(--charcoal-70); }
 
+    /* --- SOSIAL MEDIA LINK BARU DI TENTANG KAMI --- */
+    .social-media-about {
+      margin-top: 36px;
+      padding: 24px 26px;
+      background: rgba(231, 163, 53, 0.08);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(231, 163, 53, 0.25);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      backdrop-filter: blur(4px);
+      transition: border-color 0.2s ease;
+    }
+    .social-media-about:hover {
+      border-color: var(--mustard);
+    }
+    .social-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--charcoal);
+      font-family: var(--font-display);
+    }
+    .social-label i {
+      color: var(--clove);
+    }
+    .social-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .social-link-about {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cream);
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--charcoal);
+      border: 1.5px solid var(--cream-line);
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+    .social-link-about i {
+      transition: transform 0.2s ease;
+    }
+    .social-link-about:hover {
+      background: var(--charcoal);
+      color: var(--cream);
+      border-color: var(--charcoal);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 22px -12px rgba(42,33,26,.5);
+    }
+    .social-link-about:hover i {
+      transform: scale(1.1);
+      color: var(--mustard);
+    }
+    /* Akhir sosial media tentang kami */
+
     @media (max-width: 900px){
       .about-grid{ grid-template-columns:1fr; }
       .about-media{ max-width:420px; margin:0 auto; }
+      .social-media-about {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     /* =========================================================
@@ -807,6 +876,23 @@
           <span><b>Tempat Nongkrong Ramah</b><span>Suasana santai untuk ngobrol lama tanpa terburu-buru.</span></span>
         </div>
       </div>
+
+      <!-- ===== SOSIAL MEDIA LINK BARU DI TENTANG KAMI ===== -->
+      <div class="social-media-about reveal">
+        <div class="social-label">
+          <i data-lucide="heart" style="width:20px;height:20px;"></i> Ikuti Keseruan Kami
+        </div>
+        <div class="social-buttons">
+          <a href="https://instagram.com/warkoppancongceria" target="_blank" rel="noopener" class="social-link-about">
+            <i data-lucide="instagram" style="width:19px;height:19px;"></i> Instagram
+          </a>
+          <a href="https://tiktok.com/@warkoppancongceria" target="_blank" rel="noopener" class="social-link-about">
+            <i data-lucide="music-2" style="width:19px;height:19px;"></i> TikTok
+          </a>
+        </div>
+      </div>
+      <!-- ===== AKHIR SOSIAL MEDIA LINK ===== -->
+
     </div>
   </div>
 </section>

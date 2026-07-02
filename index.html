@@ -30,6 +30,25 @@
             color: var(--dark);
             overflow-x: hidden;
             line-height: 1.6;
+            position: relative;
+        }
+
+        /* Background Warkop */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/warkop-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.08;
+            z-index: -1;
+            pointer-events: none;
         }
 
         /* Scrollbar Styling */
@@ -877,6 +896,7 @@
             // Daftar gambar yang digunakan
             images: {
                 heroBg: 'hero-bg.jpg',
+                warkopBg: 'warkop-background.jpg',
                 menuItems: [
                     'kopi-pancong-original.jpg',
                     'pancong-coklat-keju.jpg',

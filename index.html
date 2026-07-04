@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Warkop Pancong Ceria</title>
   <meta name="description" content="Warkop Pancong Ceria — pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
 
@@ -491,8 +491,41 @@
     .about-point span{ font-size:14px; color:var(--charcoal-70); }
 
     @media (max-width: 900px){
-      .about-grid{ grid-template-columns:1fr; }
-      .about-media{ max-width:420px; margin:0 auto; }
+      .about-grid{ 
+        grid-template-columns:1fr; 
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+      .about-media{ 
+        max-width: 100%;
+        width: 100%;
+        margin: 0 0 8px 0;
+        order: 1; 
+        aspect-ratio: 4/3;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: 0 30px 55px -28px rgba(42,33,26,.4);
+      }
+      .about-media img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .about-text {
+        order: 0;
+        width: 100%;
+      }
+      .about-text .section-head {
+        margin-bottom: 20px;
+      }
+      .about-text .section-head h2 {
+        font-size: clamp(28px, 5vw, 38px);
+      }
+      .about-text p {
+        font-size: 16px;
+      }
     }
 
     /* =========================================================
@@ -781,10 +814,6 @@
 <!-- TENTANG KAMI -->
 <section class="section" id="tentang">
   <div class="wrap about-grid">
-    <div class="about-media reveal">
-      <img src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&w=700&q=70" alt="Suasana hangat Warkop Pancong Ceria" loading="lazy">
-    </div>
-
     <div class="about-text reveal">
       <div class="section-head">
         <span class="eyebrow">Tentang Kami</span>
@@ -807,6 +836,10 @@
           <span><b>Tempat Nongkrong Ramah</b><span>Suasana santai untuk ngobrol lama tanpa terburu-buru.</span></span>
         </div>
       </div>
+    </div>
+
+    <div class="about-media reveal">
+      <img src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&w=700&q=70" alt="Suasana hangat Warkop Pancong Ceria" loading="lazy">
     </div>
   </div>
 </section>

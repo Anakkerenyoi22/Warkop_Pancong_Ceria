@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Warkop Pancong Ceria</title>
   <meta name="description" content="Warkop Pancong Ceria — pancong hangat lumer dan kopi susu kampung otentik. Dibuat dengan resep rumahan, disajikan dengan senyum.">
 
@@ -554,8 +554,23 @@
 <!-- ===== AKHIR SOSIAL MEDIA LINK ===== -->
 
     @media (max-width: 900px){
-      .about-grid{ grid-template-columns:1fr; }
-      .about-media{ max-width:420px; margin:0 auto; }
+      .about-grid{ 
+        grid-template-columns:1fr; 
+        display: flex;
+        flex-direction: column;
+      }
+      .about-media{ 
+        max-width:100%; 
+        margin:0 0 28px 0;
+        order: -1; 
+        aspect-ratio: 4/3;
+        width: 100%;
+      }
+      .about-media img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
       .social-media-about {
         flex-direction: column;
         align-items: flex-start;
@@ -660,6 +675,48 @@
       transition:transform .2s ease;
     }
     .fab-wa:hover{ transform:scale(1.08); }
+
+    /* Tambahan style untuk sosial media about */
+    .social-media-about {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: #FFFCF6;
+      padding: 16px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(42,33,26,.1);
+    }
+    .social-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #2A211A;
+      font-size: 15px;
+    }
+    .social-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    .social-link-about {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1px solid #2A211A;
+      color: #2A211A;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+    .social-link-about:hover {
+      background: #2A211A;
+      color: #FFFCF6;
+    }
   </style>
 </head>
 <body>

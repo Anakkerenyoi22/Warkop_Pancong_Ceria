@@ -496,7 +496,7 @@
     }
 
     /* =========================================================
-       6. TENTANG KAMI
+       6. TENTANG KAMI - GALERI HORIZONTAL
        ========================================================= */
     .about-grid{
       display:grid;
@@ -504,14 +504,144 @@
       gap:64px;
       align-items:center;
     }
-    .about-media{
+
+    /* Container galeri dengan scroll horizontal */
+    .about-gallery-wrapper{
       position:relative;
       border-radius:var(--radius-lg);
       overflow:hidden;
-      aspect-ratio:4/4.6;
       box-shadow:0 30px 55px -28px rgba(42,33,26,.4);
+      background:var(--sand);
     }
-    .about-media img{ width:100%; height:100%; object-fit:cover; }
+
+    .about-gallery-scroll{
+      display:flex;
+      gap:0;
+      overflow-x:auto;
+      overflow-y:hidden;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      scroll-behavior:smooth;
+      aspect-ratio:4/4.6;
+      cursor:grab;
+      scrollbar-width:thin;
+      scrollbar-color:var(--mustard) var(--sand);
+    }
+
+    .about-gallery-scroll::-webkit-scrollbar{
+      height:6px;
+    }
+
+    .about-gallery-scroll::-webkit-scrollbar-track{
+      background:var(--sand);
+      border-radius:10px;
+    }
+
+    .about-gallery-scroll::-webkit-scrollbar-thumb{
+      background:var(--mustard);
+      border-radius:10px;
+    }
+
+    .about-gallery-scroll::-webkit-scrollbar-thumb:hover{
+      background:var(--mustard-dark);
+    }
+
+    .about-gallery-slide{
+      flex:0 0 100%;
+      width:100%;
+      height:100%;
+      scroll-snap-align:start;
+      position:relative;
+    }
+
+    .about-gallery-slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      pointer-events:none;
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+
+    /* Indikator dot di bawah galeri */
+    .gallery-dots{
+      position:absolute;
+      bottom:16px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:10px;
+      z-index:5;
+      background:rgba(42,33,26,.5);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      padding:8px 14px;
+      border-radius:999px;
+    }
+
+    .gallery-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:rgba(255,252,246,.4);
+      border:2px solid transparent;
+      cursor:pointer;
+      transition:all .3s ease;
+      flex-shrink:0;
+      padding:0;
+    }
+
+    .gallery-dot.active{
+      background:var(--mustard);
+      border-color:var(--cream);
+      transform:scale(1.15);
+    }
+
+    .gallery-dot:hover{
+      background:var(--mustard-dark);
+      transform:scale(1.1);
+    }
+
+    .gallery-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:5;
+      background:rgba(42,33,26,.6);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      border:none;
+      border-radius:50%;
+      width:44px;
+      height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--cream);
+      cursor:pointer;
+      transition:all .25s ease;
+      padding:0;
+    }
+
+    .gallery-nav:hover{
+      background:var(--mustard);
+      transform:translateY(-50%) scale(1.05);
+    }
+
+    .gallery-nav.prev{
+      left:12px;
+    }
+
+    .gallery-nav.next{
+      right:12px;
+    }
+
+    .gallery-nav svg{
+      width:20px;
+      height:20px;
+    }
+
     .about-text .section-head{ margin-bottom:24px; }
     .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 18px; }
     .about-points{ display:flex; flex-direction:column; gap:16px; margin-top:28px; }
@@ -533,34 +663,38 @@
         flex-direction: column;
         gap: 32px;
       }
-      .about-media{ 
-        max-width: 100%;
-        width: 100%;
-        margin: 0 0 8px 0;
-        order: 1; 
-        aspect-ratio: 4/3;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        box-shadow: 0 30px 55px -28px rgba(42,33,26,.4);
+      .about-gallery-wrapper{
+        max-width:100%;
+        width:100%;
+        margin:0 0 8px 0;
+        order:1;
+        border-radius:var(--radius-lg);
+        overflow:hidden;
+        box-shadow:0 30px 55px -28px rgba(42,33,26,.4);
       }
-      .about-media img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        display: block;
+      .about-gallery-scroll{
+        aspect-ratio:4/3;
       }
-      .about-text {
-        order: 0;
-        width: 100%;
+      .about-text{
+        order:0;
+        width:100%;
       }
-      .about-text .section-head {
-        margin-bottom: 20px;
+      .about-text .section-head{
+        margin-bottom:20px;
       }
-      .about-text .section-head h2 {
-        font-size: clamp(28px, 5vw, 38px);
+      .about-text .section-head h2{
+        font-size:clamp(28px,5vw,38px);
       }
-      .about-text p {
-        font-size: 16px;
+      .about-text p{
+        font-size:16px;
+      }
+      .gallery-nav{
+        width:36px;
+        height:36px;
+      }
+      .gallery-nav svg{
+        width:16px;
+        height:16px;
       }
     }
 
@@ -844,7 +978,7 @@
   </div>
 </section>
 
-<!-- TENTANG KAMI -->
+<!-- TENTANG KAMI - GALERI HORIZONTAL -->
 <section class="section" id="tentang">
   <div class="wrap about-grid">
     <div class="about-text reveal">
@@ -871,8 +1005,36 @@
       </div>
     </div>
 
-    <div class="about-media reveal">
-      <img src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&w=700&q=70" alt="Suasana hangat Warkop Pancong Ceria" loading="lazy">
+    <div class="about-gallery-wrapper reveal">
+      <div class="about-gallery-scroll" id="galleryScroll">
+        <div class="about-gallery-slide">
+          <img src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&w=800&q=70" alt="Suasana hangat Warkop Pancong Ceria" loading="lazy">
+        </div>
+        <div class="about-gallery-slide">
+          <img src="https://images.unsplash.com/photo-1581553682878-3e510e35b8a0?auto=format&fit=crop&w=800&q=70" alt="Pancong hangat disajikan dengan kopi" loading="lazy">
+        </div>
+        <div class="about-gallery-slide">
+          <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=800&q=70" alt="Suasana cozy warkop" loading="lazy">
+        </div>
+        <div class="about-gallery-slide">
+          <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=70" alt="Kopi dan camilan tradisional" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Tombol navigasi -->
+      <button class="gallery-nav prev" id="galleryPrev" aria-label="Foto sebelumnya">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="gallery-nav next" id="galleryNext" aria-label="Foto berikutnya">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 6 15 12 9 18"></polyline>
+        </svg>
+      </button>
+
+      <!-- Indikator dots -->
+      <div class="gallery-dots" id="galleryDots"></div>
     </div>
   </div>
 </section>
@@ -997,6 +1159,128 @@
   } else {
     revealEls.forEach(el => el.classList.add('in-view'));
   }
+
+  // ========== GALERI HORIZONTAL LOGIC ==========
+  const galleryScroll = document.getElementById('galleryScroll');
+  const galleryDots = document.getElementById('galleryDots');
+  const slides = galleryScroll.querySelectorAll('.about-gallery-slide');
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+  let isDragging = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  // Buat dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Foto ${i + 1}`);
+    dot.dataset.index = i;
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+    });
+    galleryDots.appendChild(dot);
+  });
+
+  function updateDots(index) {
+    document.querySelectorAll('.gallery-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  function goToSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+    galleryScroll.scrollTo({
+      left: index * galleryScroll.clientWidth,
+      behavior: 'smooth'
+    });
+    updateDots(index);
+  }
+
+  // Tombol navigasi
+  document.getElementById('galleryPrev').addEventListener('click', () => {
+    goToSlide(currentIndex - 1);
+  });
+
+  document.getElementById('galleryNext').addEventListener('click', () => {
+    goToSlide(currentIndex + 1);
+  });
+
+  // Deteksi akhir scroll untuk update dot
+  galleryScroll.addEventListener('scroll', () => {
+    const slideWidth = galleryScroll.clientWidth;
+    const scrollPosition = galleryScroll.scrollLeft;
+    const index = Math.round(scrollPosition / slideWidth);
+    if (index !== currentIndex && index >= 0 && index < totalSlides) {
+      currentIndex = index;
+      updateDots(index);
+    }
+  });
+
+  // Drag to scroll (desktop + mobile)
+  galleryScroll.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX - galleryScroll.offsetLeft;
+    scrollLeft = galleryScroll.scrollLeft;
+    galleryScroll.style.cursor = 'grabbing';
+  });
+
+  galleryScroll.addEventListener('mouseleave', () => {
+    isDragging = false;
+    galleryScroll.style.cursor = 'grab';
+  });
+
+  galleryScroll.addEventListener('mouseup', () => {
+    isDragging = false;
+    galleryScroll.style.cursor = 'grab';
+  });
+
+  galleryScroll.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - galleryScroll.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    galleryScroll.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch events for mobile drag
+  galleryScroll.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX - galleryScroll.offsetLeft;
+    scrollLeft = galleryScroll.scrollLeft;
+  });
+
+  galleryScroll.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - galleryScroll.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    galleryScroll.scrollLeft = scrollLeft - walk;
+  });
+
+  galleryScroll.addEventListener('touchend', () => {
+    isDragging = false;
+    // Snap ke slide terdekat
+    const slideWidth = galleryScroll.clientWidth;
+    const scrollPosition = galleryScroll.scrollLeft;
+    const index = Math.round(scrollPosition / slideWidth);
+    if (index >= 0 && index < totalSlides) {
+      goToSlide(index);
+    }
+  });
+
+  // Set initial cursor
+  galleryScroll.style.cursor = 'grab';
+
+  // Resize handler untuk menjaga posisi
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      goToSlide(currentIndex);
+    }, 100);
+  });
 </script>
 
 </body>

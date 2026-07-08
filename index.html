@@ -128,7 +128,7 @@
     .btn-mustard:hover{ background:var(--mustard-dark); transform:translateY(-2px); }
 
     /* =========================================================
-       2. NAVBAR
+       2. NAVBAR - Transparan saat di-scroll
        ========================================================= */
     .navbar{
       position:fixed;
@@ -138,11 +138,14 @@
       backdrop-filter:blur(10px);
       -webkit-backdrop-filter:blur(10px);
       border-bottom:1px solid transparent;
-      transition:border-color .25s ease, box-shadow .25s ease;
+      transition:background .3s ease, border-color .25s ease, box-shadow .25s ease;
     }
     .navbar.is-scrolled{
-      border-bottom-color:var(--cream-line);
-      box-shadow:0 8px 24px -18px rgba(42,33,26,.4);
+      background:rgba(255,252,246,0);
+      backdrop-filter:blur(0px);
+      -webkit-backdrop-filter:blur(0px);
+      border-bottom-color:transparent;
+      box-shadow:none;
     }
     .nav-inner{
       display:flex;
@@ -200,6 +203,30 @@
       color:var(--charcoal);
     }
 
+    /* Saat navbar transparan, warna teks menu & tombol berubah agar tetap terlihat */
+    .navbar.is-scrolled .nav-links a{
+      color:var(--charcoal);
+      text-shadow:0 2px 8px rgba(255,252,246,.6);
+    }
+    .navbar.is-scrolled .nav-links a:hover{
+      color:var(--mustard-dark);
+    }
+    .navbar.is-scrolled .logo{
+      color:var(--charcoal);
+      text-shadow:0 2px 8px rgba(255,252,246,.6);
+    }
+    .navbar.is-scrolled .btn-primary{
+      background:var(--mustard);
+      color:var(--charcoal);
+      box-shadow:0 10px 24px -10px rgba(231,163,53,.7);
+    }
+    .navbar.is-scrolled .btn-primary:hover{
+      background:var(--mustard-dark);
+    }
+    .navbar.is-scrolled .nav-toggle{
+      color:var(--charcoal);
+    }
+
     @media (max-width: 860px){
       .nav-inner{
         flex-wrap:wrap;
@@ -214,15 +241,50 @@
         border-top:1px solid var(--cream-line);
         margin:8px 0 0;
         display:none;
+        background:rgba(255,252,246,.95);
+        border-radius:0 0 var(--radius-md) var(--radius-md);
+        backdrop-filter:blur(10px);
+        -webkit-backdrop-filter:blur(10px);
       }
       .nav-links.is-open{
         display:flex;
       }
-      .nav-links a{ padding:12px 0; width:100%; border-bottom:1px solid var(--cream-line); }
+      .nav-links a{ 
+        padding:12px 0; 
+        width:100%; 
+        border-bottom:1px solid var(--cream-line);
+        color:var(--charcoal);
+      }
+      .nav-links a:hover{ color:var(--mustard-dark); }
       .nav-actions .btn-primary-desktop{ display:none; }
       .nav-toggle{ display:inline-flex; }
       .nav-actions{
         margin-left:auto;
+      }
+      /* Saat transparan di mobile, dropdown tetap solid */
+      .navbar.is-scrolled .nav-links{
+        background:rgba(255,252,246,.95);
+        backdrop-filter:blur(10px);
+        -webkit-backdrop-filter:blur(10px);
+      }
+      .navbar.is-scrolled .nav-links a{
+        color:var(--charcoal);
+        text-shadow:none;
+      }
+      .navbar.is-scrolled .nav-links a:hover{
+        color:var(--mustard-dark);
+      }
+      .navbar.is-scrolled .logo{
+        color:var(--charcoal);
+        text-shadow:none;
+      }
+      .navbar.is-scrolled .btn-primary{
+        background:var(--charcoal);
+        color:var(--cream);
+        box-shadow:0 10px 24px -10px rgba(42,33,26,.5);
+      }
+      .navbar.is-scrolled .btn-primary:hover{
+        background:var(--charcoal);
       }
     }
 

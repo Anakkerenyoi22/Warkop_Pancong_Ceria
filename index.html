@@ -25,21 +25,15 @@
 
   <link rel="canonical" href="https://yourdomain.com/">
 
-  <!-- Preload font Poppins -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" as="style">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Google Fonts: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
   <style>
-    /* =========================================================
-       1. DESIGN TOKENS — WARNA MERAH
-       ========================================================= */
     :root{
       --merah:        #DC2626;
       --merah-dark:   #B91C1C;
@@ -49,34 +43,23 @@
       --charcoal:     #2A211A;
       --charcoal-70:  rgba(42,33,26,.7);
       --charcoal-50:  rgba(42,33,26,.5);
-      --clove:        #DC2626;
       --cream-line:   rgba(42,33,26,.1);
-
       --font-display: 'Poppins', system-ui, sans-serif;
       --font-body:    'Poppins', system-ui, sans-serif;
-
       --radius-lg: 28px;
       --radius-md: 18px;
       --radius-sm: 10px;
-
       --container: 1180px;
     }
 
     *,*::before,*::after{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; scroll-padding-top: 90px; }
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-      *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
-    }
+    html{ scroll-behavior:smooth; scroll-padding-top:90px; }
+    @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ animation-duration:.001ms!important; transition-duration:.001ms!important; } }
 
     body{
-      margin:0;
-      font-family:var(--font-body);
-      font-weight:600;
-      color:var(--charcoal);
-      background:var(--cream);
-      -webkit-font-smoothing:antialiased;
-      line-height:1.6;
+      margin:0; font-family:var(--font-body); font-weight:600;
+      color:var(--charcoal); background:var(--cream);
+      -webkit-font-smoothing:antialiased; line-height:1.6;
     }
 
     img{ max-width:100%; display:block; }
@@ -84,792 +67,255 @@
     ul{ margin:0; padding:0; list-style:none; }
     section{ position:relative; }
 
-    .wrap{
-      max-width:var(--container);
-      margin:0 auto;
-      padding:0 28px;
-    }
+    .wrap{ max-width:var(--container); margin:0 auto; padding:0 28px; }
 
-    h1,h2,h3,h4{
-      font-family:var(--font-display);
-      font-weight:800;
-      line-height:1.15;
-      margin:0;
-      letter-spacing:.2px;
-    }
+    h1,h2,h3,h4{ font-family:var(--font-display); font-weight:800; line-height:1.15; margin:0; letter-spacing:.2px; }
 
     .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-family:var(--font-body);
-      font-weight:700;
-      font-size:13px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color:var(--merah);
-      margin-bottom:14px;
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:var(--font-body); font-weight:700; font-size:13px;
+      letter-spacing:.08em; text-transform:uppercase; color:var(--merah); margin-bottom:14px;
     }
-    .eyebrow::before{
-      content:"";
-      width:20px; height:2px;
-      background:var(--merah);
-      border-radius:2px;
-    }
+    .eyebrow::before{ content:""; width:20px; height:2px; background:var(--merah); border-radius:2px; }
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:15px 30px;
-      border-radius:999px;
-      font-family:var(--font-body);
-      font-weight:700;
-      font-size:15px;
-      border:2px solid transparent;
-      cursor:pointer;
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
-      white-space:nowrap;
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:15px 30px; border-radius:999px; font-family:var(--font-body);
+      font-weight:700; font-size:15px; border:2px solid transparent; cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease; white-space:nowrap;
     }
-    .btn-primary{
-      background:var(--charcoal);
-      color:var(--cream);
-      box-shadow:0 10px 24px -10px rgba(42,33,26,.5);
-    }
+    .btn-primary{ background:var(--charcoal); color:var(--cream); box-shadow:0 10px 24px -10px rgba(42,33,26,.5); }
     .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(42,33,26,.55); }
-    .btn-outline{
-      background:transparent;
-      border-color:var(--charcoal);
-      color:var(--charcoal);
-    }
+    .btn-outline{ background:transparent; border-color:var(--charcoal); color:var(--charcoal); }
     .btn-outline:hover{ background:var(--charcoal); color:var(--cream); transform:translateY(-2px); }
-    .btn-merah{
-      background:var(--merah);
-      color:var(--cream);
-      box-shadow:0 10px 24px -10px rgba(220,38,38,.7);
-    }
+    .btn-merah{ background:var(--merah); color:var(--cream); box-shadow:0 10px 24px -10px rgba(220,38,38,.7); }
     .btn-merah:hover{ background:var(--merah-dark); transform:translateY(-2px); }
 
-    /* =========================================================
-       2. NAVBAR
-       ========================================================= */
+    /* NAVBAR */
     .navbar{
-      position:fixed;
-      top:0; left:0; right:0;
-      z-index:100;
-      background:rgba(255,252,246,.85);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      border-bottom:1px solid transparent;
-      transition:background .3s ease, border-color .25s ease, box-shadow .25s ease;
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      background:rgba(255,252,246,.85); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+      border-bottom:1px solid transparent; transition:background .3s ease, border-color .25s ease, box-shadow .25s ease;
     }
-    .navbar.is-scrolled{
-      background:rgba(255,252,246,0);
-      backdrop-filter:blur(0px);
-      -webkit-backdrop-filter:blur(0px);
-      border-bottom-color:transparent;
-      box-shadow:none;
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:16px 28px;
-      max-width:var(--container);
-      margin:0 auto;
-      gap:20px;
-    }
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-family:var(--font-display);
-      font-weight:800;
-      font-size:20px;
-      color:var(--charcoal);
-      flex-shrink:0;
-    }
-    .logo-mark{
-      width:38px; height:38px;
-      border-radius:50% 50% 50% 6px;
-      background:var(--merah);
-      display:flex; align-items:center; justify-content:center;
-      font-size:18px;
-      flex-shrink:0;
-    }
-    .logo-text-highlight {
-      color: var(--merah);
-    }
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:34px;
-      margin:0 auto;
-    }
-    .nav-links a{
-      font-weight:700;
-      font-size:15px;
-      color:var(--charcoal-70);
-      position:relative;
-      padding:4px 0;
-      transition:color .2s ease;
-    }
+    .navbar.is-scrolled{ background:rgba(255,252,246,0); backdrop-filter:blur(0px); -webkit-backdrop-filter:blur(0px); border-bottom-color:transparent; box-shadow:none; }
+    .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:var(--container); margin:0 auto; gap:20px; }
+    .logo{ display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:800; font-size:20px; color:var(--charcoal); flex-shrink:0; }
+    .logo-mark{ width:38px; height:38px; border-radius:50% 50% 50% 6px; background:var(--merah); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+    .logo-text-highlight{ color:var(--merah); }
+    .nav-links{ display:flex; align-items:center; gap:34px; margin:0 auto; }
+    .nav-links a{ font-weight:700; font-size:15px; color:var(--charcoal-70); position:relative; padding:4px 0; transition:color .2s ease; }
     .nav-links a:hover{ color:var(--charcoal); }
-    .nav-actions{ 
-      display:flex; 
-      align-items:center; 
-      gap:18px;
-      flex-shrink:0;
-    }
+    .nav-actions{ display:flex; align-items:center; gap:18px; flex-shrink:0; }
+    .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; color:var(--charcoal); }
 
-    .nav-toggle{
-      display:none;
-      background:none; border:none; cursor:pointer;
-      padding:6px;
-      color:var(--charcoal);
-    }
-
-    .navbar.is-scrolled .nav-links a{
-      color:var(--charcoal);
-      text-shadow:0 2px 8px rgba(255,252,246,.6);
-    }
-    .navbar.is-scrolled .nav-links a:hover{
-      color:var(--merah-dark);
-    }
-    .navbar.is-scrolled .logo{
-      color:var(--charcoal);
-      text-shadow:0 2px 8px rgba(255,252,246,.6);
-    }
-    .navbar.is-scrolled .logo-text-highlight {
-      color: var(--merah);
-      text-shadow:0 2px 8px rgba(255,252,246,.6);
-    }
-    .navbar.is-scrolled .btn-primary{
-      background:var(--merah);
-      color:var(--cream);
-      box-shadow:0 10px 24px -10px rgba(220,38,38,.7);
-    }
-    .navbar.is-scrolled .btn-primary:hover{
-      background:var(--merah-dark);
-    }
-    .navbar.is-scrolled .nav-toggle{
-      color:var(--charcoal);
-    }
-
-    @media (max-width: 860px){
+    @media (max-width:860px){
       .nav-inner{ flex-wrap:wrap; }
-      .nav-links{
-        order:3; flex-basis:100%;
-        flex-direction:column; align-items:flex-start;
-        gap:0; padding:8px 0 20px;
-        border-top:1px solid var(--cream-line);
-        margin:8px 0 0; display:none;
-        background:rgba(255,252,246,.95);
-        border-radius:0 0 var(--radius-md) var(--radius-md);
-        backdrop-filter:blur(10px);
-        -webkit-backdrop-filter:blur(10px);
-      }
+      .nav-links{ order:3; flex-basis:100%; flex-direction:column; align-items:flex-start; gap:0; padding:8px 0 20px; border-top:1px solid var(--cream-line); margin:8px 0 0; display:none; background:rgba(255,252,246,.95); border-radius:0 0 var(--radius-md) var(--radius-md); backdrop-filter:blur(10px); }
       .nav-links.is-open{ display:flex; }
-      .nav-links a{ 
-        padding:12px 0; width:100%; 
-        border-bottom:1px solid var(--cream-line);
-        color:var(--charcoal);
-      }
+      .nav-links a{ padding:12px 0; width:100%; border-bottom:1px solid var(--cream-line); color:var(--charcoal); }
       .nav-links a:hover{ color:var(--merah-dark); }
       .nav-actions .btn-primary-desktop{ display:none; }
       .nav-toggle{ display:inline-flex; }
-      .nav-actions{ margin-left:auto; }
-      .navbar.is-scrolled .nav-links{
-        background:rgba(255,252,246,.95);
-        backdrop-filter:blur(10px);
-        -webkit-backdrop-filter:blur(10px);
-      }
-      .navbar.is-scrolled .nav-links a{
-        color:var(--charcoal); text-shadow:none;
-      }
-      .navbar.is-scrolled .nav-links a:hover{ color:var(--merah-dark); }
-      .navbar.is-scrolled .logo{ color:var(--charcoal); text-shadow:none; }
-      .navbar.is-scrolled .logo-text-highlight { color: var(--merah); text-shadow:none; }
-      .navbar.is-scrolled .btn-primary{
-        background:var(--charcoal); color:var(--cream);
-        box-shadow:0 10px 24px -10px rgba(42,33,26,.5);
-      }
     }
 
-    /* =========================================================
-       3. HERO
-       ========================================================= */
-    .hero{
-      padding:158px 0 90px;
-      position:relative; overflow:hidden;
-      min-height:100vh;
-      display:flex; align-items:center;
-    }
-    .hero-video-bg{
-      position:absolute; top:0; left:0;
-      width:100%; height:100%; z-index:0;
-    }
-    .hero-video-bg video{
-      width:100%; height:100%;
-      object-fit:cover; display:block;
-      opacity:0; transition:opacity 0.6s ease;
-    }
-    .hero-video-overlay{
-      position:absolute; top:0; left:0;
-      width:100%; height:100%;
-      background:linear-gradient(135deg, rgba(255,252,246,0.75) 0%, rgba(255,252,246,0.3) 100%);
-      z-index:1;
-    }
-    .video-loader {
-      position:absolute; top:50%; left:50%;
-      transform:translate(-50%,-50%); z-index:1; pointer-events:none;
-    }
-    .spinner {
-      width:44px; height:44px;
-      border:4px solid rgba(220,38,38,0.3);
-      border-top-color:var(--merah);
-      border-radius:50%;
-      animation:spin 0.9s linear infinite;
-    }
-    @keyframes spin { to { transform:rotate(360deg); } }
-
+    /* HERO */
+    .hero{ padding:158px 0 90px; position:relative; overflow:hidden; min-height:100vh; display:flex; align-items:center; }
+    .hero-video-bg{ position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; }
+    .hero-video-bg video{ width:100%; height:100%; object-fit:cover; display:block; opacity:0; transition:opacity .6s ease; }
+    .hero-video-overlay{ position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(135deg, rgba(255,252,246,.75) 0%, rgba(255,252,246,.3) 100%); z-index:1; }
+    .video-loader{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:1; pointer-events:none; }
+    .spinner{ width:44px; height:44px; border:4px solid rgba(220,38,38,.3); border-top-color:var(--merah); border-radius:50%; animation:spin .9s linear infinite; }
+    @keyframes spin{ to{ transform:rotate(360deg); } }
     .hero .wrap{ position:relative; z-index:2; }
-    .hero-grid{
-      display:grid; grid-template-columns:1fr;
-      gap:0; align-items:center;
-    }
-    .hero-title{
-      font-size:clamp(38px,5vw,62px);
-      color:var(--charcoal);
-      font-weight:900;
-    }
+    .hero-grid{ display:grid; grid-template-columns:1fr; gap:0; align-items:center; }
+    .hero-title{ font-size:clamp(38px,5vw,62px); color:var(--charcoal); font-weight:900; }
     .hero-title .accent{ color:var(--merah); }
-    .hero-sub{
-      margin:22px 0 34px;
-      font-size:18px; color:var(--charcoal-70);
-      max-width:600px; font-weight:600;
-    }
+    .hero-sub{ margin:22px 0 34px; font-size:18px; color:var(--charcoal-70); max-width:600px; font-weight:600; }
     .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
-    
-    .hero-stats{
-      display:flex; gap:34px; margin-top:44px;
-      padding-top:28px; border-top:1px solid var(--cream-line);
-      flex-wrap:wrap;
-    }
-    .hero-stat{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .hero-stat .stat-icon{
-      width:42px; height:42px;
-      border-radius:50%;
-      background:var(--merah);
-      display:flex; align-items:center; justify-content:center;
-      color:var(--cream);
-      flex-shrink:0;
-      font-size:17px;
-    }
-    .hero-stat .stat-icon i{
-      width:19px; height:19px;
-    }
-    .hero-stat .stat-text b{ 
-      font-family:var(--font-display); 
-      font-size:22px; 
-      display:block; 
-      color:var(--charcoal); 
-      font-weight:800;
-      line-height:1.2;
-    }
-    .hero-stat .stat-text span{ 
-      font-size:12px; 
-      color:var(--charcoal-70); 
-      font-weight:600;
-    }
+    .hero-stats{ display:flex; gap:34px; margin-top:44px; padding-top:28px; border-top:1px solid var(--cream-line); flex-wrap:wrap; }
+    .hero-stat{ display:flex; align-items:center; gap:10px; }
+    .hero-stat .stat-icon{ width:42px; height:42px; border-radius:50%; background:var(--merah); display:flex; align-items:center; justify-content:center; color:var(--cream); flex-shrink:0; font-size:17px; }
+    .hero-stat .stat-icon i{ width:19px; height:19px; }
+    .hero-stat .stat-text b{ font-family:var(--font-display); font-size:22px; display:block; color:var(--charcoal); font-weight:800; line-height:1.2; }
+    .hero-stat .stat-text span{ font-size:12px; color:var(--charcoal-70); font-weight:600; }
 
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns:1fr; }
-      .hero-sub{ max-width:none; }
-      .hero-stats{ flex-wrap:wrap; row-gap:18px; gap:24px; }
+    @media (max-width:900px){
       .hero{ padding:140px 0 70px; min-height:90vh; }
-      .hero-stat .stat-icon{
-        width:36px; height:36px;
-        font-size:15px;
-      }
-      .hero-stat .stat-icon i{
-        width:16px; height:16px;
-      }
+      .hero-stats{ gap:24px; }
+      .hero-stat .stat-icon{ width:36px; height:36px; font-size:15px; }
+      .hero-stat .stat-icon i{ width:16px; height:16px; }
       .hero-stat .stat-text b{ font-size:19px; }
     }
 
-    .scallop{
-      display:block; width:100%; height:34px; line-height:0;
-    }
+    .scallop{ display:block; width:100%; height:34px; line-height:0; }
     .scallop svg{ width:100%; height:100%; display:block; }
 
-    /* =========================================================
-       4. SECTION HEADERS
-       ========================================================= */
+    /* SECTION */
     .section{ padding:96px 0; }
     .section-sand{ background:var(--sand); }
-    .section-head{
-      max-width:600px; margin:0 0 52px;
-    }
+    .section-head{ max-width:600px; margin:0 0 52px; }
     .section-head h2{ font-size:clamp(30px,3.6vw,42px); font-weight:800; }
     .section-head p{ margin-top:16px; font-size:17px; color:var(--charcoal-70); font-weight:600; }
     .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
-
-    .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(0.2,0.9,0.3,1), transform .7s cubic-bezier(0.2,0.9,0.3,1); }
+    .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.2,.9,.3,1), transform .7s cubic-bezier(.2,.9,.3,1); }
     .reveal.in-view{ opacity:1; transform:translateY(0); }
-    .menu-card:nth-child(1){ transition-delay:0.05s; }
-    .menu-card:nth-child(2){ transition-delay:0.10s; }
-    .menu-card:nth-child(3){ transition-delay:0.15s; }
-    .menu-card:nth-child(4){ transition-delay:0.20s; }
 
-    /* =========================================================
-       5. MENU GRID
-       ========================================================= */
-    .menu-grid{
-      display:grid; grid-template-columns:repeat(4,1fr); gap:26px;
-    }
+    /* MENU GRID */
+    .menu-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
     .menu-card{
-      background:var(--cream); border-radius:var(--radius-lg);
-      overflow:hidden; border:1px solid var(--cream-line);
-      transition:transform .25s ease, box-shadow .25s ease;
-      display:flex; flex-direction:column;
-      will-change:transform; backface-visibility:hidden;
+      background:var(--cream); border-radius:var(--radius-lg); overflow:hidden;
+      border:1px solid var(--cream-line); transition:transform .25s ease, box-shadow .25s ease;
+      display:flex; flex-direction:column; will-change:transform; backface-visibility:hidden;
     }
-    .menu-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 26px 40px -24px rgba(42,33,26,.35);
-    }
-    .menu-card-img{
-      aspect-ratio:4/3; overflow:hidden;
-      position:relative; background:var(--sand);
-    }
-    .menu-card-img img{ 
-      width:100%; height:100%; object-fit:cover;
-      transition:transform .5s ease;
-      will-change:transform; backface-visibility:hidden;
-      transform:translateZ(0);
-    }
+    .menu-card:hover{ transform:translateY(-8px); box-shadow:0 26px 40px -24px rgba(42,33,26,.35); }
+    .menu-card-img{ aspect-ratio:4/3; overflow:hidden; position:relative; background:var(--sand); }
+    .menu-card-img img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; will-change:transform; backface-visibility:hidden; transform:translateZ(0); }
     .menu-card:hover .menu-card-img img{ transform:scale(1.06) translateZ(0); }
     .menu-card-price{
-      position:absolute; top:14px; right:14px;
-      background:var(--merah); color:var(--cream);
-      font-family:var(--font-display); font-weight:800;
-      font-size:14px; padding:6px 14px;
-      border-radius:999px;
-      box-shadow:0 8px 16px -6px rgba(220,38,38,.45);
-      z-index:2;
+      position:absolute; top:14px; right:14px; background:var(--merah); color:var(--cream);
+      font-family:var(--font-display); font-weight:800; font-size:14px; padding:6px 14px;
+      border-radius:999px; box-shadow:0 8px 16px -6px rgba(220,38,38,.45); z-index:2;
     }
     .menu-card-body{ padding:22px 22px 24px; flex:1; display:flex; flex-direction:column; }
     .menu-card-body h3{ font-size:19px; margin-bottom:8px; font-weight:700; }
-    .menu-card-body p{ font-size:14.5px; color:var(--charcoal-70); flex:1; margin:0 0 16px; font-weight:600; }
-    .menu-card-cta{
-      font-size:13.5px; font-weight:700;
-      color:var(--merah);
-      display:inline-flex; align-items:center; gap:6px;
+    .menu-card-body p{ font-size:14.5px; color:var(--charcoal-70); flex:1; margin:0 0 12px; font-weight:600; }
+
+    /* Rating & Terjual */
+    .menu-card-meta{
+      display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;
+    }
+    .menu-card-stars{
+      display:flex; align-items:center; gap:2px; color:var(--merah); font-size:13px;
+    }
+    .menu-card-stars i{ width:14px; height:14px; fill:var(--merah); }
+    .menu-card-rating{
+      font-weight:700; font-size:13px; color:var(--charcoal);
+    }
+    .menu-card-sold{
+      font-size:12px; color:var(--charcoal-50); font-weight:600;
     }
 
-    @media (max-width:900px){
-      .menu-grid{ grid-template-columns:repeat(2,1fr); gap:20px; }
+    /* Tombol Pesan */
+    .menu-card-btn{
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      background:var(--merah); color:var(--cream); padding:12px 18px;
+      border-radius:999px; font-weight:700; font-size:14px; cursor:pointer;
+      transition:all .25s ease; border:none; font-family:var(--font-body);
+      box-shadow:0 6px 16px -6px rgba(220,38,38,.4);
     }
-    @media (max-width:520px){
-      .menu-grid{ grid-template-columns:1fr; }
+    .menu-card-btn:hover{
+      background:var(--merah-dark); transform:translateY(-2px);
+      box-shadow:0 10px 22px -8px rgba(220,38,38,.5);
     }
+    .menu-card-btn i{ width:16px; height:16px; }
 
-    /* =========================================================
-       5.5. MENU LAINNYA
-       ========================================================= */
+    @media (max-width:900px){ .menu-grid{ grid-template-columns:repeat(2,1fr); gap:20px; } }
+    @media (max-width:520px){ .menu-grid{ grid-template-columns:1fr; } }
+
+    /* MENU LAINNYA */
     .menu-extended{
-      margin-top:56px;
-      background:var(--cream); border-radius:var(--radius-lg);
-      border:1px solid var(--cream-line);
-      padding:32px 36px;
-      box-shadow:0 16px 32px -18px rgba(42,33,26,.15);
+      margin-top:56px; background:var(--cream); border-radius:var(--radius-lg);
+      border:1px solid var(--cream-line); padding:32px 36px; box-shadow:0 16px 32px -18px rgba(42,33,26,.15);
     }
     .menu-extended-title{
-      font-family:var(--font-display); font-size:24px; font-weight:800;
-      margin-bottom:24px; padding-bottom:16px;
-      border-bottom:1px solid var(--cream-line);
-      display:flex; align-items:center; gap:10px;
-      color:var(--charcoal);
+      font-family:var(--font-display); font-size:24px; font-weight:800; margin-bottom:24px;
+      padding-bottom:16px; border-bottom:1px solid var(--cream-line); display:flex; align-items:center; gap:10px; color:var(--charcoal);
     }
-    .menu-list{
-      display:grid; grid-template-columns:repeat(2,1fr);
-      column-gap:36px; row-gap:0;
-    }
-    .menu-list-item{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:14px 0; border-bottom:1px dashed var(--cream-line);
-      font-size:15px; min-height:52px; font-weight:600;
-    }
-    .menu-list-item:last-child,
-    .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:none; }
-    .menu-item-name{
-      font-weight:700; color:var(--charcoal);
-      display:flex; align-items:center; gap:6px;
-      flex:1; padding-right:12px;
-    }
-    .menu-item-desc{
-      font-size:13.5px; color:var(--charcoal-70);
-      margin-left:4px; font-weight:600;
-    }
-    .menu-item-price{
-      font-family:var(--font-display); font-weight:800;
-      color:var(--merah); font-size:16px;
-      white-space:nowrap; margin-left:12px; flex-shrink:0;
-    }
-    .menu-category-title{
-      font-family:var(--font-body); font-weight:800;
-      font-size:16px; color:var(--charcoal-70);
-      margin-bottom:12px; padding-bottom:8px;
-      border-bottom:2px solid var(--merah);
-      display:flex; align-items:center; gap:8px;
-      letter-spacing:0.3px;
-    }
+    .menu-list{ display:grid; grid-template-columns:repeat(2,1fr); column-gap:36px; row-gap:0; }
+    .menu-list-item{ display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px dashed var(--cream-line); font-size:15px; min-height:52px; font-weight:600; }
+    .menu-list-item:last-child, .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:none; }
+    .menu-item-name{ font-weight:700; color:var(--charcoal); display:flex; align-items:center; gap:6px; flex:1; padding-right:12px; }
+    .menu-item-price{ font-family:var(--font-display); font-weight:800; color:var(--merah); font-size:16px; white-space:nowrap; margin-left:12px; flex-shrink:0; }
+    .menu-category-title{ font-family:var(--font-body); font-weight:800; font-size:16px; color:var(--charcoal-70); margin-bottom:12px; padding-bottom:8px; border-bottom:2px solid var(--merah); display:flex; align-items:center; gap:8px; letter-spacing:.3px; }
     .menu-category-title i{ color:var(--merah-dark); }
 
     @media (max-width:700px){
-      .menu-list{ grid-template-columns:1fr; row-gap:0; }
+      .menu-list{ grid-template-columns:1fr; }
       .menu-list-item{ padding:13px 0; min-height:48px; }
-      .menu-list-item:last-child{ border-bottom:none; }
-      .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:1px dashed var(--cream-line); }
       .menu-extended{ padding:24px 22px; margin-top:40px; }
-      .menu-item-name{ font-size:14.5px; }
-      .menu-item-price{ font-size:15px; }
-      .menu-category-title{ margin-top:16px; }
     }
 
-    /* =========================================================
-       6. ULASAN
-       ========================================================= */
-    .reviews-grid{
-      display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
-    }
-    .review-card{
-      background:var(--cream); border-radius:var(--radius-lg);
-      padding:28px; border:1px solid var(--cream-line);
-      transition:transform .25s ease, box-shadow .25s ease;
-      display:flex; flex-direction:column;
-    }
-    .review-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 20px 40px -20px rgba(42,33,26,.25);
-    }
-    .review-stars{
-      color:var(--merah); margin-bottom:16px;
-      font-size:15px; display:flex; gap:3px;
-    }
-    .review-text{
-      font-size:15px; color:var(--charcoal-70);
-      line-height:1.7; flex:1; margin-bottom:20px;
-      font-weight:600;
-    }
-    .reviewer{
-      display:flex; align-items:center; gap:12px;
-      padding-top:16px; border-top:1px solid var(--cream-line);
-    }
-    .reviewer-avatar{
-      width:44px; height:44px; border-radius:50%;
-      background:var(--merah); color:var(--cream);
-      display:flex; align-items:center; justify-content:center;
-      font-weight:800; font-size:15px; flex-shrink:0;
-    }
+    /* ULASAN */
+    .reviews-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .review-card{ background:var(--cream); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--cream-line); transition:transform .25s ease, box-shadow .25s ease; display:flex; flex-direction:column; }
+    .review-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px -20px rgba(42,33,26,.25); }
+    .review-stars{ color:var(--merah); margin-bottom:16px; font-size:15px; display:flex; gap:3px; }
+    .review-text{ font-size:15px; color:var(--charcoal-70); line-height:1.7; flex:1; margin-bottom:20px; font-weight:600; }
+    .reviewer{ display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px solid var(--cream-line); }
+    .reviewer-avatar{ width:44px; height:44px; border-radius:50%; background:var(--merah); color:var(--cream); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; flex-shrink:0; }
     .reviewer-info b{ display:block; font-size:15px; font-weight:700; }
     .reviewer-info span{ font-size:13px; color:var(--charcoal-50); font-weight:600; }
+    @media (max-width:900px){ .reviews-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:600px){ .reviews-grid{ grid-template-columns:1fr; } }
 
-    @media (max-width:900px){
-      .reviews-grid{ grid-template-columns:repeat(2,1fr); }
-    }
-    @media (max-width:600px){
-      .reviews-grid{ grid-template-columns:1fr; }
-    }
-
-    /* =========================================================
-       7. TENTANG KAMI - POLAROID DI KIRI, DESKRIPSI DI KANAN
-       ========================================================= */
-    .about-grid{
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:64px; align-items:center;
-    }
-
-    .about-polaroid-wrapper{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .polaroid-stack{
-      position:relative;
-      display:inline-block;
-    }
-    .polaroid-stack::before{
-      content:'';
-      position:absolute;
-      top:10px; left:10px;
-      right:-10px; bottom:-10px;
-      background:var(--cream);
-      border-radius:4px;
-      box-shadow:0 6px 20px rgba(42,33,26,0.08);
-      z-index:-1;
-      transform:rotate(2deg);
-    }
-    .polaroid-stack::after{
-      content:'';
-      position:absolute;
-      top:20px; left:20px;
-      right:-20px; bottom:-20px;
-      background:var(--cream);
-      border-radius:4px;
-      box-shadow:0 6px 20px rgba(42,33,26,0.05);
-      z-index:-2;
-      transform:rotate(-1.5deg);
-    }
-    .polaroid{
-      background:var(--cream);
-      padding:14px 14px 14px 14px;
-      box-shadow:0 8px 30px rgba(42,33,26,0.10), 0 4px 12px rgba(42,33,26,0.06);
-      border-radius:4px;
-      transform:rotate(-2deg);
-      transition:all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      max-width:420px;
-    }
-    .polaroid:hover{
-      transform:rotate(0deg) scale(1.03);
-      box-shadow:0 15px 40px rgba(42,33,26,0.15), 0 6px 16px rgba(42,33,26,0.08);
-    }
-    .polaroid img{
-      width:100%;
-      aspect-ratio:1/1;
-      object-fit:cover;
-      display:block;
-      border-radius:2px;
-      filter:sepia(0.12) contrast(1.04);
-      transition:filter 0.3s ease;
-    }
-    .polaroid:hover img{
-      filter:sepia(0) contrast(1);
-    }
-
-    .about-text{
-      display:flex;
-      flex-direction:column;
-    }
+    /* TENTANG KAMI */
+    .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .about-polaroid-wrapper{ display:flex; flex-direction:column; justify-content:center; align-items:center; }
+    .polaroid-stack{ position:relative; display:inline-block; }
+    .polaroid-stack::before{ content:''; position:absolute; top:10px; left:10px; right:-10px; bottom:-10px; background:var(--cream); border-radius:4px; box-shadow:0 6px 20px rgba(42,33,26,.08); z-index:-1; transform:rotate(2deg); }
+    .polaroid-stack::after{ content:''; position:absolute; top:20px; left:20px; right:-20px; bottom:-20px; background:var(--cream); border-radius:4px; box-shadow:0 6px 20px rgba(42,33,26,.05); z-index:-2; transform:rotate(-1.5deg); }
+    .polaroid{ background:var(--cream); padding:14px; box-shadow:0 8px 30px rgba(42,33,26,.1), 0 4px 12px rgba(42,33,26,.06); border-radius:4px; transform:rotate(-2deg); transition:all .4s cubic-bezier(.25,.46,.45,.94); max-width:420px; }
+    .polaroid:hover{ transform:rotate(0deg) scale(1.03); box-shadow:0 15px 40px rgba(42,33,26,.15), 0 6px 16px rgba(42,33,26,.08); }
+    .polaroid img{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; border-radius:2px; filter:sepia(.12) contrast(1.04); transition:filter .3s ease; }
+    .polaroid:hover img{ filter:sepia(0) contrast(1); }
+    .about-text{ display:flex; flex-direction:column; }
     .about-text .section-head{ margin-bottom:24px; }
-    .about-text .section-head h2{
-      font-size:clamp(30px,3.6vw,42px);
-      font-weight:800;
-      line-height:1.3;
-      color:var(--charcoal);
-      margin:0;
-    }
-    .about-text .section-head .subtitle-red{
-      display:block;
-      font-size:clamp(26px,3vw,36px);
-      font-weight:700;
-      color:#DC2626;
-      margin-top:4px;
-      line-height:1.3;
-    }
+    .about-text .section-head h2{ font-size:clamp(30px,3.6vw,42px); font-weight:800; line-height:1.3; color:var(--charcoal); margin:0; }
+    .about-text .section-head .subtitle-red{ display:block; font-size:clamp(26px,3vw,36px); font-weight:700; color:#DC2626; margin-top:4px; line-height:1.3; }
     .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 24px; font-weight:600; }
-
-    .about-stats-row{
-      display:flex;
-      gap:28px;
-      margin-bottom:28px;
-      flex-wrap:wrap;
-    }
-    .about-stat-item{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .about-stat-item .stat-icon{
-      width:40px; height:40px;
-      border-radius:50%;
-      background:var(--merah);
-      display:flex; align-items:center; justify-content:center;
-      color:var(--cream);
-      flex-shrink:0;
-      font-size:16px;
-    }
-    .about-stat-item .stat-icon i{
-      width:18px; height:18px;
-    }
-    .about-stat-item .stat-text b{
-      display:block;
-      font-family:var(--font-display);
-      font-size:20px;
-      font-weight:800;
-      color:var(--charcoal);
-      line-height:1.2;
-    }
-    .about-stat-item .stat-text span{
-      font-size:13px;
-      color:var(--charcoal-70);
-      font-weight:600;
-    }
-
-    .about-social-links-right{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .about-social-links-right a{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      background:var(--merah);
-      color:var(--cream);
-      padding:10px 18px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:14px;
-      transition:all 0.25s ease;
-    }
-    .about-social-links-right a:hover{
-      background:var(--merah-dark);
-      transform:translateY(-2px);
-    }
-    .about-social-links-right a i{
-      width:18px;
-      height:18px;
-    }
+    .about-stats-row{ display:flex; gap:28px; margin-bottom:28px; flex-wrap:wrap; }
+    .about-stat-item{ display:flex; align-items:center; gap:10px; }
+    .about-stat-item .stat-icon{ width:40px; height:40px; border-radius:50%; background:var(--merah); display:flex; align-items:center; justify-content:center; color:var(--cream); flex-shrink:0; font-size:16px; }
+    .about-stat-item .stat-icon i{ width:18px; height:18px; }
+    .about-stat-item .stat-text b{ display:block; font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--charcoal); line-height:1.2; }
+    .about-stat-item .stat-text span{ font-size:13px; color:var(--charcoal-70); font-weight:600; }
+    .about-social-links-right{ display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+    .about-social-links-right a{ display:flex; align-items:center; gap:8px; background:var(--merah); color:var(--cream); padding:10px 18px; border-radius:999px; font-weight:600; font-size:14px; transition:all .25s ease; }
+    .about-social-links-right a:hover{ background:var(--merah-dark); transform:translateY(-2px); }
 
     @media (max-width:900px){
-      .about-grid{ 
-        grid-template-columns:1fr;
-        gap:40px;
-      }
-      .about-polaroid-wrapper{
-        max-width:340px;
-        margin:0 auto;
-      }
-      .polaroid{
-        max-width:340px;
-      }
-      .about-text{ width:100%; }
-      .about-text .section-head{ margin-bottom:20px; }
-      .about-text .section-head h2{ font-size:clamp(28px,5vw,38px); }
-      .about-text .section-head .subtitle-red{
-        font-size:clamp(22px,4vw,30px);
-      }
+      .about-grid{ grid-template-columns:1fr; gap:40px; }
+      .about-polaroid-wrapper{ max-width:340px; margin:0 auto; }
+      .polaroid{ max-width:340px; }
       .about-text p{ font-size:16px; }
       .about-stats-row{ gap:20px; }
-      .about-social-links-right{ gap:12px; }
-      .about-social-links-right a{
-        padding:8px 14px;
-        font-size:13px;
-      }
     }
 
-    /* =========================================================
-       8. KONTAK & LOKASI
-       ========================================================= */
-    .contact{
-      background:var(--charcoal); color:var(--cream);
-      border-radius:var(--radius-lg); padding:60px;
-      display:grid; grid-template-columns:1fr 1fr; gap:50px;
-    }
+    /* KONTAK */
+    .contact{ background:var(--charcoal); color:var(--cream); border-radius:var(--radius-lg); padding:60px; display:grid; grid-template-columns:1fr 1fr; gap:50px; }
     .contact .section-head p{ color:rgba(255,252,246,.68); font-weight:600; }
     .contact .section-head h2{ color:var(--cream); }
     .contact-info-list{ display:flex; flex-direction:column; gap:22px; margin-top:30px; }
     .contact-info-item{ display:flex; gap:16px; align-items:flex-start; }
-    .contact-info-item .ico{
-      width:42px; height:42px; flex-shrink:0;
-      border-radius:12px; background:rgba(220,38,38,.15);
-      color:var(--merah); display:flex;
-      align-items:center; justify-content:center;
-    }
-    .contact-info-item b{ display:block; font-size:15px; margin-bottom:3px; font-weight:700; }
-    .contact-info-item span{ font-size:14.5px; color:rgba(255,252,246,.65); line-height:1.6; font-weight:600; }
+    .contact-info-item .ico{ width:42px; height:42px; flex-shrink:0; border-radius:12px; background:rgba(220,38,38,.15); color:var(--merah); display:flex; align-items:center; justify-content:center; }
     .contact-cta{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; }
-    .map-frame{
-      border-radius:var(--radius-md); overflow:hidden;
-      border:1px solid rgba(255,252,246,.15); min-height:280px;
-    }
+    .map-frame{ border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(255,252,246,.15); min-height:280px; }
     .map-frame iframe{ width:100%; height:100%; min-height:280px; border:0; display:block; }
+    @media (max-width:900px){ .contact{ grid-template-columns:1fr; padding:36px 24px; border-radius:var(--radius-md); } }
 
-    @media (max-width:900px){
-      .contact{ grid-template-columns:1fr; padding:36px 24px; border-radius:var(--radius-md); }
-    }
-
-    /* =========================================================
-       9. FOOTER
-       ========================================================= */
-    footer{
-      background:var(--charcoal); color:rgba(255,252,246,.6);
-      padding:30px 0 40px;
-    }
-    .footer-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      flex-wrap:wrap; gap:18px; padding-top:26px;
-      border-top:1px solid rgba(255,252,246,.12);
-    }
-    .footer-top{
-      display:flex; justify-content:space-between; align-items:center;
-      flex-wrap:wrap; gap:20px; padding-bottom:26px;
-    }
-    .footer-logo{
-      font-family:var(--font-display); font-weight:800;
-      font-size:19px; color:var(--cream);
-    }
-    .footer-logo .logo-text-highlight {
-      color: var(--merah-light);
-    }
+    /* FOOTER */
+    footer{ background:var(--charcoal); color:rgba(255,252,246,.6); padding:30px 0 40px; }
+    .footer-inner{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; padding-top:26px; border-top:1px solid rgba(255,252,246,.12); }
+    .footer-top{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding-bottom:26px; }
+    .footer-logo{ font-family:var(--font-display); font-weight:800; font-size:19px; color:var(--cream); }
+    .footer-logo .logo-text-highlight{ color:var(--merah-light); }
     .social-links{ display:flex; gap:12px; }
-    .social-links a{
-      width:40px; height:40px; border-radius:50%;
-      background:rgba(255,252,246,.08); display:flex;
-      align-items:center; justify-content:center;
-      color:var(--cream); transition:background .2s ease, transform .2s ease;
-    }
+    .social-links a{ width:40px; height:40px; border-radius:50%; background:rgba(255,252,246,.08); display:flex; align-items:center; justify-content:center; color:var(--cream); transition:background .2s ease, transform .2s ease; }
     .social-links a:hover{ background:var(--merah); color:var(--cream); transform:translateY(-3px); }
     .footer-inner p{ margin:0; font-size:13.5px; font-weight:600; }
     .footer-links{ display:flex; gap:20px; }
     .footer-links a{ font-size:13.5px; font-weight:600; }
     .footer-links a:hover{ color:var(--cream); }
 
-    .fab-wa{
-      position:fixed; right:22px; bottom:22px;
-      width:58px; height:58px; border-radius:50%;
-      background:#DC2626; color:#fff;
-      display:flex; align-items:center; justify-content:center;
-      box-shadow:0 14px 28px -10px rgba(220,38,38,.55);
-      z-index:90; transition:transform .2s ease;
-    }
+    .fab-wa{ position:fixed; right:22px; bottom:22px; width:58px; height:58px; border-radius:50%; background:#DC2626; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 14px 28px -10px rgba(220,38,38,.55); z-index:90; transition:transform .2s ease; }
     .fab-wa:hover{ transform:scale(1.08); }
 
-    .skip-link{
-      position:absolute; top:-9999px; left:50%;
-      transform:translateX(-50%); background:var(--merah);
-      color:var(--cream); padding:12px 24px;
-      border-radius:0 0 var(--radius-sm) var(--radius-sm);
-      font-weight:700; z-index:999; transition:top 0.2s;
-    }
+    .skip-link{ position:absolute; top:-9999px; left:50%; transform:translateX(-50%); background:var(--merah); color:var(--cream); padding:12px 24px; border-radius:0 0 var(--radius-sm) var(--radius-sm); font-weight:700; z-index:999; transition:top .2s; }
     .skip-link:focus{ top:0; }
 
-    .back-to-top{
-      position:fixed; bottom:90px; right:22px;
-      width:48px; height:48px; border-radius:50%;
-      background:var(--merah); color:var(--cream);
-      border:none; box-shadow:0 10px 24px -8px rgba(220,38,38,.5);
-      cursor:pointer; opacity:0; visibility:hidden;
-      transform:translateY(20px) scale(0.9);
-      transition:opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-      z-index:89; display:flex; align-items:center; justify-content:center;
-    }
-    .back-to-top.visible{
-      opacity:1; visibility:visible; transform:translateY(0) scale(1);
-    }
-    .back-to-top:hover{
-      background:var(--merah-dark); transform:translateY(-4px) scale(1.05);
-    }
+    .back-to-top{ position:fixed; bottom:90px; right:22px; width:48px; height:48px; border-radius:50%; background:var(--merah); color:var(--cream); border:none; box-shadow:0 10px 24px -8px rgba(220,38,38,.5); cursor:pointer; opacity:0; visibility:hidden; transform:translateY(20px) scale(.9); transition:opacity .3s ease, transform .3s ease, visibility .3s; z-index:89; display:flex; align-items:center; justify-content:center; }
+    .back-to-top.visible{ opacity:1; visibility:visible; transform:translateY(0) scale(1); }
+    .back-to-top:hover{ background:var(--merah-dark); transform:translateY(-4px) scale(1.05); }
 
     @media (max-width:480px){
       .hero-title{ font-size:32px; }
@@ -892,7 +338,6 @@
       <span class="logo-mark">🥞</span>
       WARKOP <span class="logo-text-highlight">PANCONG CERIA</span>
     </a>
-
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#tentang">Tentang Kami</a>
@@ -900,7 +345,6 @@
       <a href="#ulasan">Ulasan</a>
       <a href="#kontak">Lokasi</a>
     </nav>
-
     <div class="nav-actions">
       <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-primary btn-primary-desktop">Pesan Sekarang</a>
       <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
@@ -910,19 +354,16 @@
   </div>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-video-bg">
     <video autoplay muted loop playsinline preload="metadata">
       <source src="Video Untuk Background.mp4" type="video/mp4">
       <source src="https://cdn.pixabay.com/video/2024/01/25/198439-906070729_large.webm" type="video/webm">
     </video>
-    <div class="video-loader" id="videoLoader" aria-hidden="true">
-      <div class="spinner"></div>
-    </div>
+    <div class="video-loader" id="videoLoader" aria-hidden="true"><div class="spinner"></div></div>
     <div class="hero-video-overlay"></div>
   </div>
-  
   <div class="wrap">
     <div class="hero-grid">
       <div class="reveal in-view">
@@ -933,28 +374,18 @@
           <a href="#menu" class="btn btn-primary">Lihat Menu <i data-lucide="arrow-right" style="width:17px;height:17px;"></i></a>
           <a href="#kontak" class="btn btn-outline">Cek Lokasi Kami</a>
         </div>
-
         <div class="hero-stats">
           <div class="hero-stat">
             <div class="stat-icon"><i data-lucide="calendar"></i></div>
-            <div class="stat-text">
-              <b>8+</b>
-              <span>Tahun Berjualan</span>
-            </div>
+            <div class="stat-text"><b>8+</b><span>Tahun Berjualan</span></div>
           </div>
           <div class="hero-stat">
             <div class="stat-icon"><i data-lucide="star"></i></div>
-            <div class="stat-text">
-              <b>4.9</b>
-              <span>Rating Pelanggan</span>
-            </div>
+            <div class="stat-text"><b>4.9</b><span>Rating Pelanggan</span></div>
           </div>
           <div class="hero-stat">
             <div class="stat-icon"><i data-lucide="clock"></i></div>
-            <div class="stat-text">
-              <b>24/7</b>
-              <span>Jam Buka</span>
-            </div>
+            <div class="stat-text"><b>24/7</b><span>Jam Buka</span></div>
           </div>
         </div>
       </div>
@@ -971,12 +402,9 @@
   <div class="wrap about-grid">
     <div class="about-polaroid-wrapper reveal">
       <div class="polaroid-stack">
-        <div class="polaroid">
-          <img src="1.jpeg" alt="Suasana Warkop Pancong Ceria">
-        </div>
+        <div class="polaroid"><img src="1.jpeg" alt="Suasana Warkop Pancong Ceria"></div>
       </div>
     </div>
-
     <div class="about-text reveal">
       <div class="section-head">
         <span class="eyebrow">Tentang Kami</span>
@@ -984,38 +412,23 @@
         <span class="subtitle-red">Nikmati Kebersamaan.</span>
       </div>
       <p>Warkop Pancong Ceria adalah tempat nongkrong nyaman yang menyajikan pancong dengan cita rasa tradisional dan topping kekinian, ditemani kopi, teh, dan aneka minuman segar. Cocok untuk ngobrol, nugas, work from cafe, atau sekadar istirahat. Kami menggunakan bahan segar, menjaga kualitas rasa, dan memberikan pelayanan ramah dengan harga terjangkau, agar setiap pelanggan merasa nyaman dan ingin kembali lagi.</p>
-      
       <div class="about-stats-row">
         <div class="about-stat-item">
           <div class="stat-icon"><i data-lucide="calendar"></i></div>
-          <div class="stat-text">
-            <b>8+</b>
-            <span>Tahun Berjualan</span>
-          </div>
+          <div class="stat-text"><b>8+</b><span>Tahun Berjualan</span></div>
         </div>
         <div class="about-stat-item">
           <div class="stat-icon"><i data-lucide="star"></i></div>
-          <div class="stat-text">
-            <b>4.9</b>
-            <span>Rating Pelanggan</span>
-          </div>
+          <div class="stat-text"><b>4.9</b><span>Rating Pelanggan</span></div>
         </div>
         <div class="about-stat-item">
           <div class="stat-icon"><i data-lucide="clock"></i></div>
-          <div class="stat-text">
-            <b>24/7</b>
-            <span>Jam Buka</span>
-          </div>
+          <div class="stat-text"><b>24/7</b><span>Jam Buka</span></div>
         </div>
       </div>
-
       <div class="about-social-links-right">
-        <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener">
-          <i data-lucide="instagram"></i> @warkop_pancongceriaa
-        </a>
-        <a href="https://tiktok.com/@warkop_pancongceriaa" target="_blank" rel="noopener">
-          <i data-lucide="music-2"></i> @warkop_pancongceriaa
-        </a>
+        <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener"><i data-lucide="instagram"></i> @warkop_pancongceriaa</a>
+        <a href="https://tiktok.com/@warkop_pancongceriaa" target="_blank" rel="noopener"><i data-lucide="music-2"></i> @warkop_pancongceriaa</a>
       </div>
     </div>
   </div>
@@ -1031,6 +444,7 @@
     </div>
 
     <div class="menu-grid">
+      <!-- Menu 1: Pancong Cokelat -->
       <div class="menu-card reveal">
         <div class="menu-card-img">
           <img src="Pancong Coklat.png" alt="Pancong Klasik Cokelat" loading="lazy">
@@ -1039,10 +453,20 @@
         <div class="menu-card-body">
           <h3>Pancong Cokelat</h3>
           <p>Pancong Lumer dengan toping saus coklat dan taburan messes coklat.</p>
-          <span class="menu-card-cta">Menu Terlaris <i data-lucide="flame" style="width:14px;height:14px;"></i></span>
+          <div class="menu-card-meta">
+            <div class="menu-card-stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <span class="menu-card-rating">4.9</span>
+            <span class="menu-card-sold">• Terjual 1.2rb</span>
+          </div>
+          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan%20Pancong%20Cokelat!', '_blank')">
+            <i data-lucide="shopping-cart"></i> Pesan Sekarang
+          </button>
         </div>
       </div>
 
+      <!-- Menu 2: Pancong Keju -->
       <div class="menu-card reveal">
         <div class="menu-card-img">
           <img src="Pancong Keju.jpeg" alt="Pancong Keju Premium" loading="lazy">
@@ -1051,10 +475,20 @@
         <div class="menu-card-body">
           <h3>Pancong Keju</h3>
           <p>Pancong Lumer dengan taburan keju parut diatas adonan.</p>
-          <span class="menu-card-cta">Favorit Anak Muda <i data-lucide="sparkles" style="width:14px;height:14px;"></i></span>
+          <div class="menu-card-meta">
+            <div class="menu-card-stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <span class="menu-card-rating">4.8</span>
+            <span class="menu-card-sold">• Terjual 980</span>
+          </div>
+          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan%20Pancong%20Keju!', '_blank')">
+            <i data-lucide="shopping-cart"></i> Pesan Sekarang
+          </button>
         </div>
       </div>
 
+      <!-- Menu 3: Pancong Matcha -->
       <div class="menu-card reveal">
         <div class="menu-card-img">
           <img src="Pancong Matcha.jpeg" alt="Pancong Matcha Lumer" loading="lazy">
@@ -1063,10 +497,20 @@
         <div class="menu-card-body">
           <h3>Pancong Matcha</h3>
           <p>Pancong Lumer dengan toping saus matcha yang manis, Pilihan untuk rasa kekinian.</p>
-          <span class="menu-card-cta">Rasa Kekinian <i data-lucide="leaf" style="width:14px;height:14px;"></i></span>
+          <div class="menu-card-meta">
+            <div class="menu-card-stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <span class="menu-card-rating">4.9</span>
+            <span class="menu-card-sold">• Terjual 850</span>
+          </div>
+          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan%20Pancong%20Matcha!', '_blank')">
+            <i data-lucide="shopping-cart"></i> Pesan Sekarang
+          </button>
         </div>
       </div>
 
+      <!-- Menu 4: Pancong Drink Beng-Beng -->
       <div class="menu-card reveal">
         <div class="menu-card-img">
           <img src="Pancong Drink Beng-Beng.png" alt="Kopi Susu Kampung" loading="lazy">
@@ -1075,20 +519,26 @@
         <div class="menu-card-body">
           <h3>Pancong Drink Beng-Beng</h3>
           <p>Pancong Lumer dengan taburan Drink Beng Beng diatas adonan yang manis.</p>
-          <span class="menu-card-cta">Cita Rasa Yang Unik <i data-lucide="coffee" style="width:14px;height:14px;"></i></span>
+          <div class="menu-card-meta">
+            <div class="menu-card-stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <span class="menu-card-rating">4.7</span>
+            <span class="menu-card-sold">• Terjual 720</span>
+          </div>
+          <button class="menu-card-btn" onclick="window.open('https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan%20Pancong%20Drink%20Beng-Beng!', '_blank')">
+            <i data-lucide="shopping-cart"></i> Pesan Sekarang
+          </button>
         </div>
       </div>
     </div>
 
+    <!-- MENU LAINNYA -->
     <div class="menu-extended reveal">
-      <div class="menu-extended-title">
-        <i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya
-      </div>
+      <div class="menu-extended-title"><i data-lucide="list-checks" style="width:24px;height:24px;"></i> Menu Lainnya</div>
       <div class="menu-list">
         <div>
-          <div class="menu-category-title">
-            <i data-lucide="coffee" style="width:18px;height:18px;"></i> Minuman
-          </div>
+          <div class="menu-category-title"><i data-lucide="coffee" style="width:18px;height:18px;"></i> Minuman</div>
           <div class="menu-list-item"><span class="menu-item-name">Es Teh Manis</span><span class="menu-item-price">Rp 5.000</span></div>
           <div class="menu-list-item"><span class="menu-item-name">Kopi Hitam</span><span class="menu-item-price">Rp 5.000</span></div>
           <div class="menu-list-item"><span class="menu-item-name">Nutrisari</span><span class="menu-item-price">Rp 5.000</span></div>
@@ -1100,11 +550,8 @@
           <div class="menu-list-item"><span class="menu-item-name">Es Ovaltine</span><span class="menu-item-price">Rp 10.000</span></div>
           <div class="menu-list-item"><span class="menu-item-name">Es Milo</span><span class="menu-item-price">Rp 10.000</span></div>
         </div>
-
         <div>
-          <div class="menu-category-title">
-            <i data-lucide="utensils" style="width:18px;height:18px;"></i> Makanan
-          </div>
+          <div class="menu-category-title"><i data-lucide="utensils" style="width:18px;height:18px;"></i> Makanan</div>
           <div class="menu-list-item"><span class="menu-item-name">Pancong Original</span><span class="menu-item-price">Rp 7.000</span></div>
           <div class="menu-list-item"><span class="menu-item-name">Pancong Strawberry</span><span class="menu-item-price">Rp 8.000</span></div>
           <div class="menu-list-item"><span class="menu-item-name">Pancong Tiramisu</span><span class="menu-item-price">Rp 8.000</span></div>
@@ -1129,102 +576,42 @@
       <h2>Ulasan <span class="accent">Pelanggan</span></h2>
       <p style="margin-left:auto;margin-right:auto;">Apa kata mereka yang sudah mencoba pancong dan minuman di Warkop Pancong Ceria.</p>
     </div>
-
     <div class="reviews-grid">
       <div class="review-card reveal">
-        <div class="review-stars">
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-        </div>
+        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
         <p class="review-text">"Pancongnya lumer banget! Topping coklatnya royal dan rasanya enak banget. Tempatnya nyaman buat nongkrong bareng teman-teman. Pasti balik lagi!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">RA</div>
-          <div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div>
-        </div>
+        <div class="reviewer"><div class="reviewer-avatar">RA</div><div class="reviewer-info"><b>Rizky Ahmad</b><span>2 minggu lalu</span></div></div>
       </div>
-
       <div class="review-card reveal">
-        <div class="review-stars">
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-        </div>
+        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
         <p class="review-text">"Kopi susunya juara! Pancong original juga gurih banget. Harga terjangkau, pelayanan ramah. Cocok buat kerja sambil ngopi santai."</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">SP</div>
-          <div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div>
-        </div>
+        <div class="reviewer"><div class="reviewer-avatar">SP</div><div class="reviewer-info"><b>Sari Putri</b><span>1 minggu lalu</span></div></div>
       </div>
-
       <div class="review-card reveal">
-        <div class="review-stars">
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-        </div>
+        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
         <p class="review-text">"Pancong kejunya creamy parah! Tempatnya instagramable, cocok buat yang suka foto-foto sambil ngemil. Recommended banget!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">DN</div>
-          <div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div>
-        </div>
+        <div class="reviewer"><div class="reviewer-avatar">DN</div><div class="reviewer-info"><b>Dian Nugroho</b><span>3 hari lalu</span></div></div>
       </div>
-
       <div class="review-card reveal">
-        <div class="review-stars">
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-        </div>
+        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
         <p class="review-text">"Es teh manisnya seger banget, apalagi pas siang hari. Pancong coklat + keju combo terbaik! Free Wi-Fi juga kenceng."</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">AM</div>
-          <div class="reviewer-info"><b>Ayu Mandasari</b><span>5 hari lalu</span></div>
-        </div>
+        <div class="reviewer"><div class="reviewer-avatar">AM</div><div class="reviewer-info"><b>Ayu Mandasari</b><span>5 hari lalu</span></div></div>
       </div>
-
       <div class="review-card reveal">
-        <div class="review-stars">
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-        </div>
+        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
         <p class="review-text">"Pancong Matcha-nya unik banget! Rasanya creamy dan manisnya pas. Cocok buat yang suka rasa kekinian. Bakal sering pesan ini!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">BS</div>
-          <div class="reviewer-info"><b>Bayu Setiawan</b><span>1 bulan lalu</span></div>
-        </div>
+        <div class="reviewer"><div class="reviewer-avatar">BS</div><div class="reviewer-info"><b>Bayu Setiawan</b><span>1 bulan lalu</span></div></div>
       </div>
-
       <div class="review-card reveal">
-        <div class="review-stars">
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-          <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
-        </div>
+        <div class="review-stars"><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i><i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i></div>
         <p class="review-text">"Bawa keluarga ke sini, anak-anak suka pancong coklatnya. Tempatnya bersih, stafnya ramah. Harga bersahabat untuk kantong keluarga!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">RW</div>
-          <div class="reviewer-info"><b>Ratna Wulandari</b><span>2 bulan lalu</span></div>
-        </div>
+        <div class="reviewer"><div class="reviewer-avatar">RW</div><div class="reviewer-info"><b>Ratna Wulandari</b><span>2 bulan lalu</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KONTAK & LOKASI -->
+<!-- KONTAK -->
 <section class="section section-sand" id="kontak">
   <div class="wrap">
     <div class="contact reveal">
@@ -1235,40 +622,19 @@
           <p>Kami buka setiap hari dan melayani pelanggan 24 jam dengan berbagai pilihan makanan dan minuman.</p>
           <p>Bisa pesan langsung atau Via Whatsapp.</p>
         </div>
-
         <div class="contact-info-list">
-          <div class="contact-info-item">
-            <span class="ico"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></span>
-            <span><b>Alamat</b><span>Jl. Raya Jatiwaringin No.RT. 01 13, RT.1/RW.009, Cipinang Melayu, Kec. Makasar, Kota Bks, Daerah Khusus Ibukota Jakarta 13620</span></span>
-          </div>
-          <div class="contact-info-item">
-            <span class="ico"><i data-lucide="clock" style="width:20px;height:20px;"></i></span>
-            <span><b>Jam Operasional</b><span>Setiap Hari · 24 JAM</span></span>
-          </div>
-          <div class="contact-info-item">
-            <span class="ico"><i data-lucide="phone" style="width:20px;height:20px;"></i></span>
-            <span><b>WhatsApp</b><span>0856-9134-0078</span></span>
-          </div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="map-pin" style="width:20px;height:20px;"></i></span><span><b>Alamat</b><span>Jl. Raya Jatiwaringin No.RT. 01 13, RT.1/RW.009, Cipinang Melayu, Kec. Makasar, Kota Bks, Daerah Khusus Ibukota Jakarta 13620</span></span></div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="clock" style="width:20px;height:20px;"></i></span><span><b>Jam Operasional</b><span>Setiap Hari · 24 JAM</span></span></div>
+          <div class="contact-info-item"><span class="ico"><i data-lucide="phone" style="width:20px;height:20px;"></i></span><span><b>WhatsApp</b><span>0856-9134-0078</span></span></div>
         </div>
-
         <div class="contact-cta">
-          <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-merah">
-            <i data-lucide="message-circle" style="width:17px;height:17px;"></i> Chat via WhatsApp
-          </a>
-          <a href="https://maps.google.com/?q=Warkop+Pancong+Ceria" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:rgba(255,252,246,.4); color:var(--cream);">
-            <i data-lucide="map" style="width:17px;height:17px;"></i> Buka di Google Maps
-          </a>
+          <a href="https://wa.me/6285691340078?text=Halo%20Warkop%20Pancong%20Ceria%2C%20saya%20mau%20pesan!" class="btn btn-merah"><i data-lucide="message-circle" style="width:17px;height:17px;"></i> Chat via WhatsApp</a>
+          <a href="https://maps.google.com/?q=Warkop+Pancong+Ceria" target="_blank" rel="noopener" class="btn btn-outline" style="border-color:rgba(255,252,246,.4); color:var(--cream);"><i data-lucide="map" style="width:17px;height:17px;"></i> Buka di Google Maps</a>
         </div>
       </div>
-
       <div>
         <div class="map-frame">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.115447949006!2d106.90574897586852!3d-6.24851476118384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f32070ec8641%3A0x9672f17b7b997710!2sWARKOP%20PANCONG%20CERIA!5e0!3m2!1sen!2sid!4v1782979411688!5m2!1sen!2sid"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Lokasi Warkop Pancong Ceria">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.115447949006!2d106.90574897586852!3d-6.24851476118384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f32070ec8641%3A0x9672f17b7b997710!2sWARKOP%20PANCONG%20CERIA!5e0!3m2!1sen!2sid!4v1782979411688!5m2!1sen!2sid" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Warkop Pancong Ceria"></iframe>
         </div>
       </div>
     </div>
@@ -1288,11 +654,7 @@
     <div class="footer-inner">
       <p>&copy; 2026 Warkop Pancong Ceria. Semua hak cipta dilindungi.</p>
       <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#menu">Menu</a>
-        <a href="#ulasan">Ulasan</a>
-        <a href="#kontak">Lokasi</a>
+        <a href="#home">Home</a><a href="#tentang">Tentang Kami</a><a href="#menu">Menu</a><a href="#ulasan">Ulasan</a><a href="#kontak">Lokasi</a>
       </div>
     </div>
   </div>
@@ -1307,15 +669,9 @@
 </button>
 
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    if (window.lucide) lucide.createIcons();
-  });
-
+  window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('is-scrolled', window.scrollY > 12);
-  }, { passive: true });
-
+  window.addEventListener('scroll', () => { navbar.classList.toggle('is-scrolled', window.scrollY > 12); }, { passive: true });
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => {
@@ -1325,7 +681,6 @@
     if (window.lucide) lucide.createIcons();
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('is-open');
@@ -1335,61 +690,25 @@
       document.body.style.overflow = '';
     });
   });
-
-  document.addEventListener('click', (e) => {
-    const isNavClick = e.target.closest('.navbar');
-    if (!isNavClick && navLinks.classList.contains('is-open')) {
-      navLinks.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', false);
-      navToggle.innerHTML = '<i data-lucide="menu"></i>';
-      if (window.lucide) lucide.createIcons();
-      document.body.style.overflow = '';
-    }
-  });
-
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); } });
     }, { threshold: 0.15 });
     revealEls.forEach(el => observer.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('in-view'));
-  }
-
+  } else { revealEls.forEach(el => el.classList.add('in-view')); }
   const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTop.classList.toggle('visible', window.scrollY > 600);
-  }, { passive: true });
+  window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 600); }, { passive: true });
   backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
   const heroVideo = document.querySelector('.hero-video-bg video');
   const videoLoader = document.getElementById('videoLoader');
   if (heroVideo) {
-    heroVideo.addEventListener('loadeddata', () => {
-      if (videoLoader) videoLoader.style.display = 'none';
-      heroVideo.style.opacity = '1';
-    });
-    heroVideo.addEventListener('error', () => {
-      if (videoLoader) videoLoader.style.display = 'none';
-      heroVideo.style.opacity = '1';
-    });
-    setTimeout(() => {
-      if (videoLoader) videoLoader.style.display = 'none';
-      heroVideo.style.opacity = '1';
-    }, 5000);
+    heroVideo.addEventListener('loadeddata', () => { if (videoLoader) videoLoader.style.display = 'none'; heroVideo.style.opacity = '1'; });
+    heroVideo.addEventListener('error', () => { if (videoLoader) videoLoader.style.display = 'none'; heroVideo.style.opacity = '1'; });
+    setTimeout(() => { if (videoLoader) videoLoader.style.display = 'none'; heroVideo.style.opacity = '1'; }, 5000);
   }
-
   const yearSpan = document.querySelector('.footer-inner p');
-  if (yearSpan) {
-    const currentYear = new Date().getFullYear();
-    yearSpan.textContent = yearSpan.textContent.replace('2026', currentYear);
-  }
+  if (yearSpan) { const currentYear = new Date().getFullYear(); yearSpan.textContent = yearSpan.textContent.replace('2026', currentYear); }
 </script>
 
 </body>

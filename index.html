@@ -198,6 +198,10 @@
       font-size:18px;
       flex-shrink:0;
     }
+    /* Style untuk teks "PANCONG CERIA" berwarna merah */
+    .logo-text-highlight {
+      color: var(--merah);
+    }
     .nav-links{
       display:flex;
       align-items:center;
@@ -236,6 +240,11 @@
     }
     .navbar.is-scrolled .logo{
       color:var(--charcoal);
+      text-shadow:0 2px 8px rgba(255,252,246,.6);
+    }
+    /* Saat transparan, teks merah tetap merah */
+    .navbar.is-scrolled .logo-text-highlight {
+      color: var(--merah);
       text-shadow:0 2px 8px rgba(255,252,246,.6);
     }
     .navbar.is-scrolled .btn-primary{
@@ -283,6 +292,7 @@
       }
       .navbar.is-scrolled .nav-links a:hover{ color:var(--merah-dark); }
       .navbar.is-scrolled .logo{ color:var(--charcoal); text-shadow:none; }
+      .navbar.is-scrolled .logo-text-highlight { color: var(--merah); text-shadow:none; }
       .navbar.is-scrolled .btn-primary{
         background:var(--charcoal); color:var(--cream);
         box-shadow:0 10px 24px -10px rgba(42,33,26,.5);
@@ -644,6 +654,10 @@
       font-family:var(--font-display); font-weight:800;
       font-size:19px; color:var(--cream);
     }
+    /* Style untuk teks "PANCONG CERIA" di footer */
+    .footer-logo .logo-text-highlight {
+      color: var(--merah-light);
+    }
     .social-links{ display:flex; gap:12px; }
     .social-links a{
       width:40px; height:40px; border-radius:50%;
@@ -709,7 +723,7 @@
   <div class="nav-inner">
     <a href="#home" class="logo">
       <span class="logo-mark">🥞</span>
-      WARKOP PANCONG CERIA
+      WARKOP <span class="logo-text-highlight">PANCONG CERIA</span>
     </a>
 
     <nav class="nav-links" id="navLinks">
@@ -1033,7 +1047,7 @@
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <span class="footer-logo">🥞 Warkop Pancong Ceria</span>
+      <span class="footer-logo">🥞 Warkop <span class="logo-text-highlight">Pancong Ceria</span></span>
       <div class="social-links">
         <a href="https://instagram.com/warkoppancongceria" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
         <a href="https://tiktok.com/@warkoppancongceria" target="_blank" rel="noopener" aria-label="TikTok"><i data-lucide="music-2" style="width:18px;height:18px;"></i></a>

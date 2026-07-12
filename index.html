@@ -536,18 +536,20 @@
        7. TENTANG KAMI - POLAROID DI KIRI, DESKRIPSI DI KANAN
        ========================================================= */
     .about-grid{
-      display:grid; grid-template-columns:1.15fr .85fr;
+      display:grid; grid-template-columns:1fr 1fr;
       gap:64px; align-items:center;
     }
 
     /* Container polaroid di kiri */
     .about-polaroid-wrapper{
       display:flex;
+      flex-direction:column;
       justify-content:center;
       align-items:center;
+      gap:28px;
     }
 
-    /* Polaroid style */
+    /* Polaroid style - DIPERBESAR */
     .polaroid-stack{
       position:relative;
       display:inline-block;
@@ -555,8 +557,8 @@
     .polaroid-stack::before{
       content:'';
       position:absolute;
-      top:8px; left:8px;
-      right:-8px; bottom:-8px;
+      top:10px; left:10px;
+      right:-10px; bottom:-10px;
       background:var(--cream);
       border-radius:4px;
       box-shadow:0 6px 20px rgba(42,33,26,0.08);
@@ -566,8 +568,8 @@
     .polaroid-stack::after{
       content:'';
       position:absolute;
-      top:16px; left:16px;
-      right:-16px; bottom:-16px;
+      top:20px; left:20px;
+      right:-20px; bottom:-20px;
       background:var(--cream);
       border-radius:4px;
       box-shadow:0 6px 20px rgba(42,33,26,0.05);
@@ -576,12 +578,12 @@
     }
     .polaroid{
       background:var(--cream);
-      padding:12px 12px 12px 12px;
+      padding:14px 14px 14px 14px;
       box-shadow:0 8px 30px rgba(42,33,26,0.10), 0 4px 12px rgba(42,33,26,0.06);
       border-radius:4px;
       transform:rotate(-2deg);
       transition:all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      max-width:340px;
+      max-width:420px;
     }
     .polaroid:hover{
       transform:rotate(0deg) scale(1.03);
@@ -600,19 +602,112 @@
       filter:sepia(0) contrast(1);
     }
 
+    /* Social media links di bawah polaroid */
+    .about-social-links{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .about-social-links a{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:var(--cream);
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      color:var(--charcoal);
+      border:1px solid var(--cream-line);
+      transition:all 0.25s ease;
+    }
+    .about-social-links a:hover{
+      background:var(--merah);
+      color:var(--cream);
+      border-color:var(--merah);
+      transform:translateY(-2px);
+    }
+    .about-social-links a i{
+      width:18px;
+      height:18px;
+    }
+
     /* Teks tentang kami di kanan */
+    .about-text{
+      display:flex;
+      flex-direction:column;
+    }
     .about-text .section-head{ margin-bottom:24px; }
-    .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 18px; font-weight:600; }
-    .about-points{ display:flex; flex-direction:column; gap:16px; margin-top:28px; }
-    .about-point{ display:flex; gap:14px; align-items:flex-start; }
-    .about-point .ico{
-      width:38px; height:38px; flex-shrink:0;
-      border-radius:50%; background:var(--merah);
+    .about-text .section-head h2 .accent{
+      color:var(--merah);
+    }
+    .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 24px; font-weight:600; }
+
+    /* Stats di bawah deskripsi */
+    .about-stats-row{
+      display:flex;
+      gap:28px;
+      margin-bottom:28px;
+      flex-wrap:wrap;
+    }
+    .about-stat-item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .about-stat-item .stat-icon{
+      width:40px; height:40px;
+      border-radius:50%;
+      background:var(--merah);
       display:flex; align-items:center; justify-content:center;
       color:var(--cream);
+      flex-shrink:0;
+      font-size:16px;
     }
-    .about-point b{ display:block; font-size:15.5px; margin-bottom:2px; font-weight:700; }
-    .about-point span{ font-size:14px; color:var(--charcoal-70); font-weight:600; }
+    .about-stat-item .stat-icon i{
+      width:18px; height:18px;
+    }
+    .about-stat-item .stat-text b{
+      display:block;
+      font-family:var(--font-display);
+      font-size:20px;
+      font-weight:800;
+      color:var(--charcoal);
+      line-height:1.2;
+    }
+    .about-stat-item .stat-text span{
+      font-size:13px;
+      color:var(--charcoal-70);
+      font-weight:600;
+    }
+
+    /* Social media links di bawah deskripsi */
+    .about-social-links-right{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .about-social-links-right a{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:var(--merah);
+      color:var(--cream);
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      transition:all 0.25s ease;
+    }
+    .about-social-links-right a:hover{
+      background:var(--merah-dark);
+      transform:translateY(-2px);
+    }
+    .about-social-links-right a i{
+      width:18px;
+      height:18px;
+    }
 
     @media (max-width:900px){
       .about-grid{ 
@@ -621,16 +716,19 @@
       }
       .about-polaroid-wrapper{
         order:0;
-        max-width:300px;
+        max-width:340px;
         margin:0 auto;
       }
       .polaroid{
-        max-width:280px;
+        max-width:340px;
       }
       .about-text{ order:0; width:100%; }
       .about-text .section-head{ margin-bottom:20px; }
       .about-text .section-head h2{ font-size:clamp(28px,5vw,38px); }
       .about-text p{ font-size:16px; }
+      .about-stats-row{
+        gap:20px;
+      }
     }
 
     /* =========================================================
@@ -810,38 +908,68 @@
   <svg viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M0,0 Q10,20 20,0 Q30,20 40,0 Q50,20 60,0 Q70,20 80,0 Q90,20 100,0 Q110,20 120,0 Q130,20 140,0 Q150,20 160,0 Q170,20 180,0 Q190,20 200,0 Q210,20 220,0 Q230,20 240,0 Q250,20 260,0 Q270,20 280,0 Q290,20 300,0 Q310,20 320,0 Q330,20 340,0 Q350,20 360,0 Q370,20 380,0 Q390,20 400,0 L400,0 L0,0 Z" fill="var(--sand)"></path></svg>
 </div>
 
-<!-- TENTANG KAMI - POLAROID DI KIRI, DESKRIPSI DI KANAN -->
+<!-- TENTANG KAMI - POLAROID DIPERBESAR DI KIRI, DESKRIPSI DI KANAN -->
 <section class="section" id="tentang">
   <div class="wrap about-grid">
-    <!-- Kiri: Polaroid -->
+    <!-- Kiri: Polaroid + Social Links -->
     <div class="about-polaroid-wrapper reveal">
       <div class="polaroid-stack">
         <div class="polaroid">
           <img src="1.jpeg" alt="Suasana Warkop Pancong Ceria">
         </div>
       </div>
+      <!-- Social media links di bawah polaroid -->
+      <div class="about-social-links">
+        <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener">
+          <i data-lucide="instagram"></i> @warkop_pancongceriaa
+        </a>
+        <a href="https://tiktok.com/@warkop_pancongceriaa" target="_blank" rel="noopener">
+          <i data-lucide="music-2"></i> @warkop_pancongceriaa
+        </a>
+      </div>
     </div>
 
-    <!-- Kanan: Deskripsi -->
+    <!-- Kanan: Deskripsi + Stats + Social Links -->
     <div class="about-text reveal">
       <div class="section-head">
         <span class="eyebrow">Tentang Kami</span>
         <h2>NIKMATI RASA, <span class="accent">NIKMATI KEBERSAMAAN.</span></h2>
       </div>
       <p>Warkop Pancong Ceria adalah tempat nongkrong nyaman yang menyajikan pancong dengan cita rasa tradisional dan topping kekinian, ditemani kopi, teh, dan aneka minuman segar. Cocok untuk ngobrol, nugas, work from cafe, atau sekadar istirahat. Kami menggunakan bahan segar, menjaga kualitas rasa, dan memberikan pelayanan ramah dengan harga terjangkau, agar setiap pelanggan merasa nyaman dan ingin kembali lagi.</p>
-      <div class="about-points">
-        <div class="about-point">
-          <span class="ico"><i data-lucide="heart-handshake" style="width:18px;height:18px;"></i></span>
-          <span><b>Menu Andalan Yang Beragam</b><span>Nikmati pancong lumer dan berbagai camilan yang cocok dinikmati kapan saja.</span></span>
+      
+      <!-- Stats: 8+ Tahun, 4.9 Rating, 24/7 Buka -->
+      <div class="about-stats-row">
+        <div class="about-stat-item">
+          <div class="stat-icon"><i data-lucide="calendar"></i></div>
+          <div class="stat-text">
+            <b>8+</b>
+            <span>Tahun Berjualan</span>
+          </div>
         </div>
-        <div class="about-point">
-          <span class="ico"><i data-lucide="wheat" style="width:18px;height:18px;"></i></span>
-          <span><b>Pelayanan Ramah</b><span>Kami menyambut setiap pelanggan seperti temen sendiri agar selalu merasa nyaman saat berkunjung.</span></span>
+        <div class="about-stat-item">
+          <div class="stat-icon"><i data-lucide="star"></i></div>
+          <div class="stat-text">
+            <b>4.9</b>
+            <span>Rating Pelanggan</span>
+          </div>
         </div>
-        <div class="about-point">
-          <span class="ico"><i data-lucide="smile" style="width:18px;height:18px;"></i></span>
-          <span><b>Tempat Nongkrong Nyaman</b><span>Suasana santai untuk ngobrol lama tanpa terburu-buru.</span></span>
+        <div class="about-stat-item">
+          <div class="stat-icon"><i data-lucide="clock"></i></div>
+          <div class="stat-text">
+            <b>24/7</b>
+            <span>Jam Buka</span>
+          </div>
         </div>
+      </div>
+
+      <!-- Social media links di bawah deskripsi -->
+      <div class="about-social-links-right">
+        <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener">
+          <i data-lucide="instagram"></i> @warkop_pancongceriaa
+        </a>
+        <a href="https://tiktok.com/@warkop_pancongceriaa" target="_blank" rel="noopener">
+          <i data-lucide="music-2"></i> @warkop_pancongceriaa
+        </a>
       </div>
     </div>
   </div>
@@ -1186,8 +1314,8 @@
     <div class="footer-top">
       <span class="footer-logo">🥞 Warkop <span class="logo-text-highlight">Pancong Ceria</span></span>
       <div class="social-links">
-        <a href="https://instagram.com/warkoppancongceria" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
-        <a href="https://tiktok.com/@warkoppancongceria" target="_blank" rel="noopener" aria-label="TikTok"><i data-lucide="music-2" style="width:18px;height:18px;"></i></a>
+        <a href="https://instagram.com/warkop_pancongceriaa" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a>
+        <a href="https://tiktok.com/@warkop_pancongceriaa" target="_blank" rel="noopener" aria-label="TikTok"><i data-lucide="music-2" style="width:18px;height:18px;"></i></a>
       </div>
     </div>
     <div class="footer-inner">

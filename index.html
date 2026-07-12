@@ -533,69 +533,74 @@
     }
 
     /* =========================================================
-       7. TENTANG KAMI - GALERI
+       7. TENTANG KAMI - POLAROID DI KIRI, DESKRIPSI DI KANAN
        ========================================================= */
     .about-grid{
-      display:grid; grid-template-columns:.85fr 1.15fr;
+      display:grid; grid-template-columns:1.15fr .85fr;
       gap:64px; align-items:center;
     }
-    .about-gallery-wrapper{
-      position:relative; border-radius:var(--radius-lg);
-      overflow:hidden; box-shadow:0 30px 55px -28px rgba(42,33,26,.4);
-      background:var(--sand);
+
+    /* Container polaroid di kiri */
+    .about-polaroid-wrapper{
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
-    .about-gallery-scroll{
-      display:flex; gap:0; overflow-x:auto; overflow-y:hidden;
-      scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
-      scroll-behavior:smooth; aspect-ratio:4/4.6;
-      cursor:grab; scrollbar-width:thin;
-      scrollbar-color:var(--merah) var(--sand);
+
+    /* Polaroid style */
+    .polaroid-stack{
+      position:relative;
+      display:inline-block;
     }
-    .about-gallery-scroll::-webkit-scrollbar{ height:6px; }
-    .about-gallery-scroll::-webkit-scrollbar-track{ background:var(--sand); border-radius:10px; }
-    .about-gallery-scroll::-webkit-scrollbar-thumb{ background:var(--merah); border-radius:10px; }
-    .about-gallery-scroll::-webkit-scrollbar-thumb:hover{ background:var(--merah-dark); }
-    .about-gallery-slide{
-      flex:0 0 100%; width:100%; height:100%;
-      scroll-snap-align:start; position:relative;
+    .polaroid-stack::before{
+      content:'';
+      position:absolute;
+      top:8px; left:8px;
+      right:-8px; bottom:-8px;
+      background:var(--cream);
+      border-radius:4px;
+      box-shadow:0 6px 20px rgba(42,33,26,0.08);
+      z-index:-1;
+      transform:rotate(2deg);
     }
-    .about-gallery-slide img{
-      width:100%; height:100%; object-fit:cover;
-      display:block; pointer-events:none; user-select:none;
+    .polaroid-stack::after{
+      content:'';
+      position:absolute;
+      top:16px; left:16px;
+      right:-16px; bottom:-16px;
+      background:var(--cream);
+      border-radius:4px;
+      box-shadow:0 6px 20px rgba(42,33,26,0.05);
+      z-index:-2;
+      transform:rotate(-1.5deg);
     }
-    .gallery-dots{
-      position:absolute; bottom:16px; left:50%;
-      transform:translateX(-50%); display:flex; gap:10px;
-      z-index:5; background:rgba(42,33,26,.5);
-      backdrop-filter:blur(6px); padding:8px 14px;
-      border-radius:999px;
+    .polaroid{
+      background:var(--cream);
+      padding:12px 12px 12px 12px;
+      box-shadow:0 8px 30px rgba(42,33,26,0.10), 0 4px 12px rgba(42,33,26,0.06);
+      border-radius:4px;
+      transform:rotate(-2deg);
+      transition:all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      max-width:340px;
     }
-    .gallery-dot{
-      width:10px; height:10px; border-radius:50%;
-      background:rgba(255,252,246,.4); border:2px solid transparent;
-      cursor:pointer; transition:all .3s ease;
-      flex-shrink:0; padding:0; min-width:10px; min-height:10px;
+    .polaroid:hover{
+      transform:rotate(0deg) scale(1.03);
+      box-shadow:0 15px 40px rgba(42,33,26,0.15), 0 6px 16px rgba(42,33,26,0.08);
     }
-    .gallery-dot.active{
-      background:var(--merah); border-color:var(--cream);
-      transform:scale(1.15);
+    .polaroid img{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      display:block;
+      border-radius:2px;
+      filter:sepia(0.12) contrast(1.04);
+      transition:filter 0.3s ease;
     }
-    .gallery-dot:hover{ background:var(--merah-dark); transform:scale(1.1); }
-    .gallery-nav{
-      position:absolute; top:50%; transform:translateY(-50%);
-      z-index:5; background:rgba(42,33,26,.6);
-      backdrop-filter:blur(4px); border:none;
-      border-radius:50%; width:44px; height:44px;
-      display:flex; align-items:center; justify-content:center;
-      color:var(--cream); cursor:pointer;
-      transition:all .25s ease; padding:0;
+    .polaroid:hover img{
+      filter:sepia(0) contrast(1);
     }
-    .gallery-nav:hover{
-      background:var(--merah); transform:translateY(-50%) scale(1.05);
-    }
-    .gallery-nav.prev{ left:12px; }
-    .gallery-nav.next{ right:12px; }
-    .gallery-nav svg{ width:20px; height:20px; }
+
+    /* Teks tentang kami di kanan */
     .about-text .section-head{ margin-bottom:24px; }
     .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 18px; font-weight:600; }
     .about-points{ display:flex; flex-direction:column; gap:16px; margin-top:28px; }
@@ -611,21 +616,21 @@
 
     @media (max-width:900px){
       .about-grid{ 
-        grid-template-columns:1fr; display:flex;
-        flex-direction:column; gap:32px;
+        grid-template-columns:1fr;
+        gap:40px;
       }
-      .about-gallery-wrapper{
-        max-width:100%; width:100%; margin:0 0 8px 0;
-        order:1; border-radius:var(--radius-lg);
-        overflow:hidden; box-shadow:0 30px 55px -28px rgba(42,33,26,.4);
+      .about-polaroid-wrapper{
+        order:0;
+        max-width:300px;
+        margin:0 auto;
       }
-      .about-gallery-scroll{ aspect-ratio:4/3; }
+      .polaroid{
+        max-width:280px;
+      }
       .about-text{ order:0; width:100%; }
       .about-text .section-head{ margin-bottom:20px; }
       .about-text .section-head h2{ font-size:clamp(28px,5vw,38px); }
       .about-text p{ font-size:16px; }
-      .gallery-nav{ width:36px; height:36px; }
-      .gallery-nav svg{ width:16px; height:16px; }
     }
 
     /* =========================================================
@@ -805,9 +810,19 @@
   <svg viewBox="0 0 400 20" preserveAspectRatio="none"><path d="M0,0 Q10,20 20,0 Q30,20 40,0 Q50,20 60,0 Q70,20 80,0 Q90,20 100,0 Q110,20 120,0 Q130,20 140,0 Q150,20 160,0 Q170,20 180,0 Q190,20 200,0 Q210,20 220,0 Q230,20 240,0 Q250,20 260,0 Q270,20 280,0 Q290,20 300,0 Q310,20 320,0 Q330,20 340,0 Q350,20 360,0 Q370,20 380,0 Q390,20 400,0 L400,0 L0,0 Z" fill="var(--sand)"></path></svg>
 </div>
 
-<!-- TENTANG KAMI - DIGESER KE SEBELAH KANAN HOME -->
+<!-- TENTANG KAMI - POLAROID DI KIRI, DESKRIPSI DI KANAN -->
 <section class="section" id="tentang">
   <div class="wrap about-grid">
+    <!-- Kiri: Polaroid -->
+    <div class="about-polaroid-wrapper reveal">
+      <div class="polaroid-stack">
+        <div class="polaroid">
+          <img src="1.jpeg" alt="Suasana Warkop Pancong Ceria">
+        </div>
+      </div>
+    </div>
+
+    <!-- Kanan: Deskripsi -->
     <div class="about-text reveal">
       <div class="section-head">
         <span class="eyebrow">Tentang Kami</span>
@@ -831,32 +846,10 @@
         </div>
       </div>
     </div>
-
-    <div class="about-gallery-wrapper reveal">
-      <div class="about-gallery-scroll" id="galleryScroll">
-        <div class="about-gallery-slide"><img src="1.jpeg" alt="Suasana hangat Warkop Pancong Ceria" loading="lazy"></div>
-        <div class="about-gallery-slide"><img src="2.jpeg" alt="Pancong hangat disajikan dengan kopi" loading="lazy"></div>
-        <div class="about-gallery-slide"><img src="3.jpeg" alt="Suasana cozy warkop" loading="lazy"></div>
-        <div class="about-gallery-slide"><img src="4.jpeg" alt="Kopi dan camilan tradisional" loading="lazy"></div>
-      </div>
-
-      <button class="gallery-nav prev" id="galleryPrev" aria-label="Foto sebelumnya">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-      <button class="gallery-nav next" id="galleryNext" aria-label="Foto berikutnya">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 6 15 12 9 18"></polyline>
-        </svg>
-      </button>
-
-      <div class="gallery-dots" id="galleryDots"></div>
-    </div>
   </div>
 </section>
 
-<!-- MENU SECTION - DIGESER KE SEBELAH KANAN TENTANG KAMI -->
+<!-- MENU SECTION -->
 <section class="section section-sand" id="menu">
   <div class="wrap">
     <div class="section-head center reveal">
@@ -1017,7 +1010,7 @@
   </div>
 </section>
 
-<!-- ===== ULASAN - SECTION BARU DI SEBELAH MENU ===== -->
+<!-- ULASAN -->
 <section class="section" id="ulasan">
   <div class="wrap">
     <div class="section-head center reveal">
@@ -1027,7 +1020,6 @@
     </div>
 
     <div class="reviews-grid">
-      <!-- Ulasan 1 -->
       <div class="review-card reveal">
         <div class="review-stars">
           <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
@@ -1046,7 +1038,6 @@
         </div>
       </div>
 
-      <!-- Ulasan 2 -->
       <div class="review-card reveal">
         <div class="review-stars">
           <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
@@ -1065,7 +1056,6 @@
         </div>
       </div>
 
-      <!-- Ulasan 3 -->
       <div class="review-card reveal">
         <div class="review-stars">
           <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
@@ -1084,7 +1074,6 @@
         </div>
       </div>
 
-      <!-- Ulasan 4 -->
       <div class="review-card reveal">
         <div class="review-stars">
           <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
@@ -1103,7 +1092,6 @@
         </div>
       </div>
 
-      <!-- Ulasan 5 -->
       <div class="review-card reveal">
         <div class="review-stars">
           <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
@@ -1122,7 +1110,6 @@
         </div>
       </div>
 
-      <!-- Ulasan 6 -->
       <div class="review-card reveal">
         <div class="review-stars">
           <i data-lucide="star" style="width:16px;height:16px;fill:var(--merah);"></i>
@@ -1285,104 +1272,6 @@
     revealEls.forEach(el => el.classList.add('in-view'));
   }
 
-  // ===== GALERI HORIZONTAL LOGIC =====
-  const galleryScroll = document.getElementById('galleryScroll');
-  const galleryDots = document.getElementById('galleryDots');
-  const slides = galleryScroll.querySelectorAll('.about-gallery-slide');
-  const totalSlides = slides.length;
-  let currentIndex = 0;
-  let isDragging = false;
-  let startX = 0;
-  let scrollLeft = 0;
-
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Foto ${i + 1}`);
-    dot.dataset.index = i;
-    dot.addEventListener('click', () => { goToSlide(i); });
-    galleryDots.appendChild(dot);
-  });
-
-  function updateDots(index) {
-    document.querySelectorAll('.gallery-dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-  }
-
-  function goToSlide(index) {
-    if (index < 0) index = totalSlides - 1;
-    if (index >= totalSlides) index = 0;
-    currentIndex = index;
-    galleryScroll.scrollTo({ left: index * galleryScroll.clientWidth, behavior: 'smooth' });
-    updateDots(index);
-  }
-
-  document.getElementById('galleryPrev').addEventListener('click', () => {
-    goToSlide(currentIndex - 1);
-    stopGalleryAutoPlay();
-    setTimeout(startGalleryAutoPlay, 3000);
-  });
-
-  document.getElementById('galleryNext').addEventListener('click', () => {
-    goToSlide(currentIndex + 1);
-    stopGalleryAutoPlay();
-    setTimeout(startGalleryAutoPlay, 3000);
-  });
-
-  galleryScroll.addEventListener('scroll', () => {
-    const slideWidth = galleryScroll.clientWidth;
-    const scrollPosition = galleryScroll.scrollLeft;
-    const index = Math.round(scrollPosition / slideWidth);
-    if (index !== currentIndex && index >= 0 && index < totalSlides) {
-      currentIndex = index;
-      updateDots(index);
-    }
-  });
-
-  galleryScroll.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.pageX - galleryScroll.offsetLeft;
-    scrollLeft = galleryScroll.scrollLeft;
-    galleryScroll.style.cursor = 'grabbing';
-  });
-  galleryScroll.addEventListener('mouseleave', () => { isDragging = false; galleryScroll.style.cursor = 'grab'; });
-  galleryScroll.addEventListener('mouseup', () => { isDragging = false; galleryScroll.style.cursor = 'grab'; });
-  galleryScroll.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - galleryScroll.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    galleryScroll.scrollLeft = scrollLeft - walk;
-  });
-
-  galleryScroll.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startX = e.touches[0].pageX - galleryScroll.offsetLeft;
-    scrollLeft = galleryScroll.scrollLeft;
-  });
-  galleryScroll.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - galleryScroll.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    galleryScroll.scrollLeft = scrollLeft - walk;
-  });
-  galleryScroll.addEventListener('touchend', () => {
-    isDragging = false;
-    const slideWidth = galleryScroll.clientWidth;
-    const scrollPosition = galleryScroll.scrollLeft;
-    const index = Math.round(scrollPosition / slideWidth);
-    if (index >= 0 && index < totalSlides) { goToSlide(index); }
-  });
-
-  galleryScroll.style.cursor = 'grab';
-
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => { goToSlide(currentIndex); }, 100);
-  });
-
   // ===== BACK TO TOP =====
   const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
@@ -1407,29 +1296,6 @@
       heroVideo.style.opacity = '1';
     }, 5000);
   }
-
-  // ===== AUTO-PLAY GALERI =====
-  let autoPlayTimer;
-  const galleryWrapper = document.querySelector('.about-gallery-wrapper');
-  function startGalleryAutoPlay() {
-    if (autoPlayTimer) clearInterval(autoPlayTimer);
-    autoPlayTimer = setInterval(() => { goToSlide(currentIndex + 1); }, 4500);
-  }
-  function stopGalleryAutoPlay() {
-    if (autoPlayTimer) { clearInterval(autoPlayTimer); autoPlayTimer = null; }
-  }
-  const galleryObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { startGalleryAutoPlay(); }
-      else { stopGalleryAutoPlay(); }
-    });
-  }, { threshold: 0.3 });
-  if (galleryWrapper) galleryObserver.observe(galleryWrapper);
-
-  galleryScroll.addEventListener('mouseenter', stopGalleryAutoPlay);
-  galleryScroll.addEventListener('mouseleave', startGalleryAutoPlay);
-  galleryScroll.addEventListener('touchstart', stopGalleryAutoPlay);
-  galleryScroll.addEventListener('touchend', startGalleryAutoPlay);
 
   // ===== TAHUN OTOMATIS DI FOOTER =====
   const yearSpan = document.querySelector('.footer-inner p');

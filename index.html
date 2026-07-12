@@ -352,7 +352,6 @@
     }
     .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
     
-    /* Hero stats dengan icon merah */
     .hero-stats{
       display:flex; gap:34px; margin-top:44px;
       padding-top:28px; border-top:1px solid var(--cream-line);
@@ -666,16 +665,15 @@
       font-weight:800;
       line-height:1.3;
       color:var(--charcoal);
+      margin:0;
     }
-    .about-text .section-head h2 .accent{
-      color:var(--merah);
-    }
-    .about-text .section-head h2 .subtitle{
+    .about-text .section-head .subtitle-red{
       display:block;
       font-size:clamp(26px,3vw,36px);
       font-weight:700;
-      color:var(--merah);
+      color:#DC2626;
       margin-top:4px;
+      line-height:1.3;
     }
     .about-text p{ color:var(--charcoal-70); font-size:16.5px; margin:0 0 24px; font-weight:600; }
 
@@ -758,7 +756,7 @@
       .about-text{ width:100%; }
       .about-text .section-head{ margin-bottom:20px; }
       .about-text .section-head h2{ font-size:clamp(28px,5vw,38px); }
-      .about-text .section-head h2 .subtitle{
+      .about-text .section-head .subtitle-red{
         font-size:clamp(22px,4vw,30px);
       }
       .about-text p{ font-size:16px; }
@@ -936,7 +934,6 @@
           <a href="#kontak" class="btn btn-outline">Cek Lokasi Kami</a>
         </div>
 
-        <!-- Hero Stats dengan Icon Merah -->
         <div class="hero-stats">
           <div class="hero-stat">
             <div class="stat-icon"><i data-lucide="calendar"></i></div>
@@ -984,7 +981,7 @@
       <div class="section-head">
         <span class="eyebrow">Tentang Kami</span>
         <h2>Nikmati Rasa,</h2>
-        <h2 class="subtitle">Nikmati Kebersamaan.</h2>
+        <span class="subtitle-red">Nikmati Kebersamaan.</span>
       </div>
       <p>Warkop Pancong Ceria adalah tempat nongkrong nyaman yang menyajikan pancong dengan cita rasa tradisional dan topping kekinian, ditemani kopi, teh, dan aneka minuman segar. Cocok untuk ngobrol, nugas, work from cafe, atau sekadar istirahat. Kami menggunakan bahan segar, menjaga kualitas rasa, dan memberikan pelayanan ramah dengan harga terjangkau, agar setiap pelanggan merasa nyaman dan ingin kembali lagi.</p>
       

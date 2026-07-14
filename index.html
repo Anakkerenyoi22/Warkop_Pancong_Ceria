@@ -224,20 +224,21 @@
     .menu-list-item{
       display:flex; align-items:center; justify-content:space-between;
       padding:13px 0; border-bottom:1px dashed var(--cream-line);
-      font-size:14px; min-height:50px; font-weight:600; gap:10px;
+      font-size:14px; min-height:50px; font-weight:600; gap:12px; /* tambah gap */
     }
     .menu-list-item:last-child,
     .menu-list-item:nth-last-child(2):nth-child(even){ border-bottom:none; }
     
     .menu-list-item-left{ 
-      display:flex; flex-direction:column; gap:5px; flex:1; min-width:0;
+      display:flex; flex-direction:column; gap:5px; flex:1; min-width:0; /* biar bs mengecil */
     }
     .menu-item-name-row{ 
-      display:flex; align-items:center; justify-content:space-between; gap:6px;
+      display:flex; align-items:center; justify-content:space-between; gap:8px;
+      flex-wrap: wrap; /* biar turun di hp */
     }
     .menu-item-name{ 
       font-weight:700; color:var(--charcoal); font-size:14px;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      /* hapus white-space nowrap agar bisa turun */
     }
     .menu-item-price{ 
       font-family:var(--font-display); font-weight:800;
@@ -262,6 +263,8 @@
       border-radius:999px; font-weight:600; font-size:11px; cursor:pointer;
       transition:all .25s ease; border:none; font-family:var(--font-body);
       white-space:nowrap; flex-shrink:0;
+      /* biar ga kepotong */
+      margin-top: 0;
     }
     .menu-list-btn:hover{ background:var(--merah-dark); transform:translateY(-2px); }
     .menu-list-btn i{ width:13px; height:13px; }
@@ -275,7 +278,16 @@
 
     @media (max-width:700px){
       .menu-list{ grid-template-columns:1fr; }
-      .menu-list-item{ padding:12px 0; min-height:auto; }
+      .menu-list-item{ 
+        flex-direction: column; /* stack vertikal */
+        align-items: flex-start; 
+        padding:12px 0; min-height:auto; 
+        gap: 10px;
+      }
+      .menu-list-btn {
+        align-self: flex-end; /* tombol di kanan */
+        margin-top: 4px;
+      }
       .menu-extended{ padding:20px 16px; margin-top:40px; }
       .menu-item-name{ font-size:13px; }
       .menu-item-price{ font-size:14px; }
